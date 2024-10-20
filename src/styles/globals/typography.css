@@ -1,0 +1,33 @@
+:root {
+        /* TYPOGRAPHY */
+        --font-stack: 'Manrope', Helvetica, sans-serif;
+        --font-extra-bold: 800;
+        --font-bold: 700;
+        --font-normal: 500;
+      
+        /* Headings */
+        --display-1: var(--font-extra-bold) 5rem var(--font-stack);
+        --display-2: var(--font-extra-bold) 4.5rem var(--font-stack);
+        --display-3: var(--font-extra-bold) 4rem var(--font-stack);
+        --display-4: var(--font-extra-bold) 3.5rem var(--font-stack);
+        --display-5: var(--font-extra-bold) 3rem var(--font-stack);
+        --display-6: var(--font-extra-bold) 2.5rem var(--font-stack);
+      
+        --heading-1: var(--font-bold) 2.5rem var(--font-stack);
+        --heading-2: var(--font-bold) 2rem var(--font-stack);
+        --heading-3: var(--font-bold) 1.75rem var(--font-stack);
+        --heading-4: var(--font-bold) 1.5rem var(--font-stack);
+        --heading-5: var(--font-bold) 1.5rem var(--font-stack);
+        --heading-6: var(--font-bold) 1rem var(--font-stack);
+      
+        /* Body Text */
+        --lead-text: var(--font-bold) 1.5rem var(--font-stack); 
+        --xl-text: var(--font-bold) 1.25rem var(--font-stack); 
+        --l-text: var(--font-bold) 1.125rem var(--font-stack); 
+        --m-text: var(--font-normal) 1rem var(--font-stack); 
+        --s-text: var(--font-normal) 0.875rem var(--font-stack); 
+        --xs-text: var(--font-normal) 0.75rem var(--font-stack); 
+      
+        /* Navigation */
+        --navigation: var(--font-bold) 1rem var(--font-stack);
+}

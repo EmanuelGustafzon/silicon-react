@@ -1,0 +1,68 @@
+.themeSettingsWrapper {
+    display: flex;
+    column-gap: 12px;
+    margin-bottom: 24px;
+}
+.toggleContainer {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .themeText {
+    display: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a slider */
+  .toggleSlider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 46px;
+    background-color: var(--gray-600);
+    border-radius: 20px;
+    transition: background-color 0.5s ease;
+  }
+
+  /* When the toggle is checked, add brand primary background color */
+  .checkbox:checked ~ .toggleSlider {
+    background-color: var(--brand-primary);
+  }
+  
+  /* Create the indicator (the dot/circle - to the left when not checked) */
+  .toggleSlider:after {
+    content: "";
+    position: absolute;
+    display: block;
+    transition: left 0.5s ease;
+    left: 0;
+  }
+  
+  /* slide (dot/circle) when checked */
+  .checkbox:checked ~ .toggleSlider:after {
+    display: block;
+    left: 22px;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .toggleSlider:after {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: 2px;
+    border-radius: 50%;
+    background: var(--white);
+  }

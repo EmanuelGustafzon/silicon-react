@@ -1,0 +1,4 @@
+:root {
+    --s-shadow: 0 1px 5px rgba(61, 56, 56, 0.2);
+    --brand-shadow: 0 1px 6px var(--brand-primary);
+  }

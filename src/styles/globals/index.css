@@ -1,0 +1,45 @@
+@import './typography.css';
+@import './colors.css';
+
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+:root {
+  --bg-primary: var(--white);
+  --bg-secondary: var(--gray-100);
+  --color: var(--gray-900);
+  --border-color: var(--gray-400);
+}
+body {
+  font-family: var(--font-stack);
+  transition: background-color 0.5s ease;
+  background-color: var(--bg-primary);
+  color: var(--color);
+}
+body.dark {
+  --bg-primary: var(--gray-900);
+  --bg-secondary: var(--white-05);
+  --color: var(--white-70);
+  --border-color: var(--white-70);
+  h1, h2, h3, h4, h5, h6 {
+      color: var(--white);
+  }
+}
+a {
+  font: var(--navigation);
+  color: var(--color);
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+p {
+  font: var(--m-text);
+}
