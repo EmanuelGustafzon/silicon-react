@@ -21,6 +21,52 @@
 .signin {
     display: none;
 }
-.flex {
-    display: flex;
+.links {
+    display: none;
+}
+@media (min-width: 720px) {
+    .navWrapper {
+        position: relative;
+        max-width: 720px;
+        gap: 76px;
+    }
+    .themeSettingsWrapper {
+        margin-bottom: 0;
+    }
+    .themeText {
+        display: block;
+    }
+}
+@media (min-width: 1340px) {
+    .navWrapper {
+        max-width: 1340px;
+        grid-template-columns: auto 1fr auto auto;
+        gap: 32px;
+    }
+    .signin {
+        display: block;
+    }
+    .links {
+        position: relative;
+        top: auto;
+        width: auto;
+        right: auto;
+        min-height: 0;
+        border-radius: 0;
+        background-color: transparent;
+        display: block;
+        a {
+            color: var(--color);
+        }
+        animation: none;   
+    }
+    .navLink {
+        margin-right: 1em;
+    }
+    .navLink:hover {
+        color: var(--brand-primary);
+    }
+    .signin {
+        margin-left: 32px;
+    }
 }

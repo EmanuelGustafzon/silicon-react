@@ -9,16 +9,16 @@ const ThemeSwitch = () => {
   return (
     <div className={styles.themeSettingsWrapper}>
         <span className={styles.themeText}>Dark Mode</span>
-            <label 
-            className={styles.toggleContainer}>
-                <input 
-                    type="checkbox" 
-                    className={styles.checkbox}
-                    onChange={changeTheme}
-                    checked={theme === 'dark'}
-                    />
-                <span className={styles.toggleSlider}></span>
-            </label>
+        <label 
+        className={styles.toggleContainer}>
+            <input 
+                type="checkbox" 
+                className={styles.checkbox}
+                onChange={changeTheme}
+                checked={theme === 'dark'}
+                />
+            <span className={styles.toggleSlider}></span>
+        </label>
     </div>
   )
 }

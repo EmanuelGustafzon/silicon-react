@@ -1,0 +1,60 @@
+.btn {
+    border-width: 0;
+    border-radius: 8px;
+}
+.small {
+    padding-left: 0.54em;
+    padding-right: 0.54em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+}
+.medium {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+}
+.large {
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.brand {
+    background-color: var(--brand-primary);
+    color: var(--white);
+    font: var(--s-text);
+}
+.primary {
+    background-color: var(--gray-900);
+    color:var(--white);
+}
+body.dark .primary {
+    background-color: var(--gray-100);
+    color: var(--gray-800);
+}
+.secondary {
+    background-color: var(--bg-secondary);
+    color: var(--gray-800);
+}
+body.dark .secondary {
+    color: var(--white);
+}
+.white {
+    background-color: var(--white);
+    color: var(--gray-800);
+    
+}  
+body.dark .white {
+        color: var(--white);
+        background-color: var(--white-05);
+}
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    border-width: 0;
+}
