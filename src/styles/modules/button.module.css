@@ -25,30 +25,32 @@
     color: var(--white);
     font: var(--s-text);
 }
+.darkPrimary {
+    background-color: var(--gray-100);
+    color: var(--gray-800);
+}
 .primary {
     background-color: var(--gray-900);
     color:var(--white);
 }
-body.dark .primary {
-    background-color: var(--gray-100);
-    color: var(--gray-800);
+.darkSecondary {
+    color: var(--white);
 }
 .secondary {
     background-color: var(--bg-secondary);
     color: var(--gray-800);
 }
-body.dark .secondary {
+
+.darkWhite {
+    background-color: var(--white-05);
     color: var(--white);
+    
 }
 .white {
     background-color: var(--white);
     color: var(--gray-800);
     
 }  
-body.dark .white {
-        color: var(--white);
-        background-color: var(--white-05);
-}
 .arrow {
     display: flex;
     align-items: center;

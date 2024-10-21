@@ -1,8 +1,7 @@
-import { useState, useEffect, useContext } from "react";
-import { BaseUrlContext } from '../contexts/baseUrl'
+import { useState, useEffect } from "react";
 
 const useFetch = (endpoint: string, url?: string) => {
-    const baseUrl = useContext(BaseUrlContext);
+    const baseUrl = 'https://win24-assignment.azurewebsites.net/api';
     if(!url) url = baseUrl;
     
     const [data, setData] = useState(null);

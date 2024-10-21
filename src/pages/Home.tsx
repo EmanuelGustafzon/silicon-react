@@ -1,9 +1,10 @@
+import Hero from "../sections/Hero";
 
 function Home() {
   
     return (
       <>
-        <div>hello world</div>
+        <Hero/>
       </>
     )
   }

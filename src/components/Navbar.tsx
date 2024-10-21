@@ -1,13 +1,11 @@
-import navStyles from '../styles/component-styles/navbar.module.css';
-import buttonStyles from '../styles/component-styles/button.module.css';
+import navStyles from '../styles/modules/navbar.module.css';
+import buttonStyles from '../styles/modules/button.module.css';
 import BurgerMenu from './BurgerMenu';
 import ThemeSwitch from './ThemeSwitch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-
 const Navbar = () => {
-
   return (
     <>
     <header>
@@ -25,7 +23,7 @@ const Navbar = () => {
                 <FontAwesomeIcon icon={faUser}/> 
                 <span> Sign in / up</span>
             </a> 
-            <BurgerMenu/>  
+            <BurgerMenu/>
         </div>
     </header>
     </>

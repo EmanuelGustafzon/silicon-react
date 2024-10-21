@@ -1,5 +1,5 @@
 import { createContext, useState, ReactNode, useEffect } from 'react';
-import { themeContextType } from '../types/themeContext'
+import { themeContextType, Theme } from '../types/themeContext'
 
 const ThemeContext = createContext<themeContextType | undefined>(undefined);
 
@@ -8,7 +8,7 @@ interface ThemeProviderProps {
   }
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-    const [theme, setTheme]  = useState('dark')
+    const [theme, setTheme]  = useState<Theme>('dark')
 
     useEffect(() => {
       const changeBodyClass = () => theme === 'dark' ? document.body.className = 'dark' : document.body.className = 'light';

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import styles from '../styles/component-styles/burgerMenu.module.css';
+import styles from '../styles/modules/burgerMenu.module.css';
 import { useState } from 'react';
 
 const BurgerMenu = () => {

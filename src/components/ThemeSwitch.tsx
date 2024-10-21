@@ -1,4 +1,4 @@
-import styles from '../styles/component-styles/themeSwitch.module.css';
+import styles from '../styles/modules/themeSwitch.module.css';
 import useTheme from '../hooks/useTheme';
 
 
