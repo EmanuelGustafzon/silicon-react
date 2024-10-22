@@ -1,4 +1,5 @@
 import CompanyLogos from "../components/CompanyLogos";
+import Features from "../sections/Features";
 import Hero from "../sections/Hero";
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
       <>
         <Hero/>
         <CompanyLogos/>
+        <Features />
       </>
     )
   }

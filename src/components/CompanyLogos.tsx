@@ -1,17 +1,5 @@
-import React from 'react';
 import styles from '../styles/modules/companyLogos.module.css';
 import useCurrentDevice from '../hooks/useCurrentDevice';
-
-interface companyLogoProps {
-    img: string
-}
-const CompanyLogo: React.FC<companyLogoProps> = ({img}) => {
-    return (
-        <div className={styles.companyLogo}>
-            <img loading="lazy" src={img} alt="Logo of company" />
-        </div>  
-    )
-}
 
 const CompanyLogos = () => {
     const device = useCurrentDevice();
@@ -24,10 +12,18 @@ const CompanyLogos = () => {
     <div className={styles.companyLogos}>
         {logos.map( (link, index) => {
             return (
-                <CompanyLogo key={index} img={link} /> )
+                <CompanyLogo key={index} imgSrc={link} /> )
             })}
-        </div>
+    </div>
   )
+}
+
+const CompanyLogo= ({ imgSrc }: { imgSrc: string }) => {
+    return (
+        <div className={styles.companyLogo}>
+            <img loading="lazy" src={imgSrc} alt="Logo of company" />
+        </div>  
+    )
 }
 
 export default CompanyLogos

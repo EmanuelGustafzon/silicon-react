@@ -1,7 +1,7 @@
-import { createContext, useState, ReactNode, useEffect } from 'react';
-import { themeContextType, Theme } from '../types/themeContext'
+import { useState, ReactNode, useEffect } from 'react';
+import ThemeContext from './themeContext';
+import { Theme } from '../types/themeContext'
 
-const ThemeContext = createContext<themeContextType | undefined>(undefined);
 
 interface ThemeProviderProps {
     children: ReactNode;
@@ -11,8 +11,8 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const [theme, setTheme]  = useState<Theme>('dark')
 
     useEffect(() => {
-      const changeBodyClass = () => document.body.className = theme;
-      changeBodyClass();
+      const changeThemeAttribute = () => document.body.setAttribute('data-theme', theme)
+      changeThemeAttribute();
     }, [theme])
     
     return (

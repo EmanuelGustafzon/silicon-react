@@ -1,0 +1,6 @@
+.iconBackground {
+    width: 61px;
+    height: 61px;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+}

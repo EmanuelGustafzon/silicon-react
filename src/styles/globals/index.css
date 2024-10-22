@@ -17,13 +17,7 @@
   --color: var(--gray-900);
   --border-color: var(--gray-400);
 }
-body {
-  font-family: var(--font-stack);
-  transition: background-color 0.5s ease;
-  background-color: var(--bg-primary);
-  color: var(--color);
-}
-body.dark {
+body[data-theme="dark"] {
   --bg-primary: var(--gray-900);
   --bg-secondary: var(--white-05);
   --color: var(--white-70);
@@ -31,6 +25,13 @@ body.dark {
   h1, h2, h3, h4, h5, h6 {
       color: var(--white);
   }
+}
+body {
+  font-family: var(--font-stack);
+  background-color: var(--bg-primary);
+  color: var(--color);
+
+  transition: background-color 0.5s ease;
 }
 a {
   font: var(--navigation);

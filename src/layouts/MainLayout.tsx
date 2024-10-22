@@ -9,9 +9,9 @@ interface MainLayoutProps {
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <>
-    <Navbar/> 
-    <main>{children}</main>
-    <Footer/> 
+      <Navbar/> 
+      <main>{children}</main>
+      <Footer/> 
     </>
   )
 }

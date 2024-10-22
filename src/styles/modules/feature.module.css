@@ -1,0 +1,10 @@
+.featuresCard {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+}
+@media(min-width: 720px) {
+    .featuresCard {
+        flex: 0 0 50%;
+        box-sizing: border-box;
+    }
+}
