@@ -4,15 +4,21 @@ import { ReactNode } from 'react';
 
 interface LinkButtonProps {
     children: ReactNode;
-    link: string;
+    link?: string;
+    clickEvent?: () => void;
     color: 'white' | 'brand' | 'primary' | 'secondary';
     size?: 'small' | 'medium' | 'large';
     form?: 'round' | 'square';
     className?: string;
 }
 
-const LinkButton: React.FC<LinkButtonProps> = ({ children, link , color, size, form, className}) => {
+const LinkButton: React.FC<LinkButtonProps> = ({ children, link, clickEvent, color, size, form, className}) => {
     const { theme } = useTheme();
+
+    if(link && clickEvent) {
+        console.log('Not possible to have a click event and a link, choose one')
+        return
+    }
 
     const colors = {
         white: theme === 'dark' ? styles.darkWhite : styles.white,
@@ -27,9 +33,16 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, link , color, size, f
 
   return (
     <>
+    { link && 
         <a href={link} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
             { children }
-        </a>
+        </a> 
+    }
+    { clickEvent &&
+        <button onClick={clickEvent} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+            { children }
+        </button>
+    }
     </>
   )
 }
