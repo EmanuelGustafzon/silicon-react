@@ -1,3 +1,4 @@
+import CompanyLogos from "../components/CompanyLogos";
 import Hero from "../sections/Hero";
 
 function Home() {
@@ -5,6 +6,7 @@ function Home() {
     return (
       <>
         <Hero/>
+        <CompanyLogos/>
       </>
     )
   }

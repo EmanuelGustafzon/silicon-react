@@ -11,7 +11,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const [theme, setTheme]  = useState<Theme>('dark')
 
     useEffect(() => {
-      const changeBodyClass = () => theme === 'dark' ? document.body.className = 'dark' : document.body.className = 'light';
+      const changeBodyClass = () => document.body.className = theme;
       changeBodyClass();
     }, [theme])
     
