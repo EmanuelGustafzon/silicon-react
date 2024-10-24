@@ -38,69 +38,68 @@ const Slider = () => {
     }
   return (
     <>
-    {device === 'mobile' &&
-    <div className={styles.sliderImages}>
-        <div 
-        className={`
-            ${styles.slide} 
-            ${isSlidingOut && direction === 'right' && styles.slideOutLeft} 
-            ${isSlidingIn && direction === 'right' && styles.slideInRight} 
-            ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
-            ${isSlidingIn && direction === 'left' && styles.slideInLeft}
-            `}>
-            <img 
-            key={pictures[slide]}
-            loading="lazy" 
-            src={pictures[slide]} 
-            alt="Sillicon app my budget"/>
+        {device === 'mobile' &&
+        <div className={styles.sliderImages}>
+            <div 
+            className={`
+                ${styles.slide} 
+                ${isSlidingOut && direction === 'right' && styles.slideOutLeft} 
+                ${isSlidingIn && direction === 'right' && styles.slideInRight} 
+                ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
+                ${isSlidingIn && direction === 'left' && styles.slideInLeft}
+                `}>
+                <img 
+                key={pictures[slide]}
+                loading="lazy" 
+                src={pictures[slide]} 
+                alt="Sillicon app my budget"/>
+            </div>
         </div>
-    </div>
-    }
-    {device === 'desktop' || device == 'tablet' &&
-    <div className={styles.sliderImages}>
-        <div className={`
-            ${styles.slide} 
-            ${isSlidingOut && direction === 'right' && styles.slideOutLeft} 
-            ${isSlidingIn && direction === 'right' && styles.slideInRight} 
-            ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
-            ${isSlidingIn && direction === 'left' && styles.slideInLeft}
-            `}>
-            <img key={pictures[(slide - 2 + 3)% 3]} loading="lazy" className="leftImage" src={pictures[(slide - 2 + 3)% 3]} alt="Sillicon app my budget"/>
+        }
+        {device !== 'mobile' &&
+        <div className={styles.sliderImages}>
+            <div className={`
+                ${styles.slide} 
+                ${isSlidingOut && direction === 'right' && styles.slideOutLeft} 
+                ${isSlidingIn && direction === 'right' && styles.slideInRight} 
+                ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
+                ${isSlidingIn && direction === 'left' && styles.slideInLeft}
+                `}>
+                <img key={pictures[(slide - 2 + 3)% 3]} loading="lazy" className="leftImage" src={pictures[(slide - 2 + 3)% 3]} alt="Sillicon app my budget"/>
+            </div>
+            <div className={`
+                ${styles.slide} 
+                ${styles.active} 
+                ${isSlidingOut && direction === 'right' && styles.slideOutLeft} 
+                ${isSlidingIn && direction === 'right' && styles.slideInRight} 
+                ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
+                ${isSlidingIn && direction === 'left' && styles.slideInLeft}
+                `}>
+                <img key={pictures[slide]} loading="lazy" src={pictures[slide]} alt="Sillicon app my budget"/>
+            </div>
+            <div className={`
+                ${styles.slide} 
+                ${isSlidingOut && direction === 'left' && styles.slideOutLeft} 
+                ${isSlidingIn && direction === 'left' && styles.slideInRight} 
+                ${isSlidingOut && direction === 'right' && styles.slideOutRight} 
+                ${isSlidingIn && direction === 'right' && styles.slideInLeft}
+                `}>
+                <img key={pictures[(slide + 2) % 3]} loading="lazy" className="rightImage" src={pictures[(slide + 2) % 3]} alt="Sillicon app my budget"/>
+            </div>
         </div>
-        <div className={`
-            ${styles.slide} 
-            ${styles.active} 
-            ${isSlidingOut && direction === 'right' && styles.slideOutLeft} 
-            ${isSlidingIn && direction === 'right' && styles.slideInRight} 
-            ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
-            ${isSlidingIn && direction === 'left' && styles.slideInLeft}
-            `}>
-            <img key={pictures[slide]} loading="lazy" src={pictures[slide]} alt="Sillicon app my budget"/>
-        </div>
-        <div className={`
-            ${styles.slide} 
-            ${isSlidingOut && direction === 'left' && styles.slideOutLeft} 
-            ${isSlidingIn && direction === 'left' && styles.slideInRight} 
-            ${isSlidingOut && direction === 'right' && styles.slideOutRight} 
-            ${isSlidingIn && direction === 'right' && styles.slideInLeft}
-            `}>
-            <img key={pictures[(slide + 2) % 3]} loading="lazy" className="rightImage" src={pictures[(slide + 2) % 3]} alt="Sillicon app my budget"/>
-        </div>
-    </div>
-    }
-    <h3 className={styles.heading}>{headings[slide]}</h3>
-    <p>Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis tristique quisque hac in consectetur condimentum.</p>
-    {!isSlidingIn && !isSlidingOut && 
-    <>
-        <LinkButton color='primary' clickEvent={slideLeft} form='round' className={styles.prevBtn}>
-            <FontAwesomeIcon icon={faChevronLeft}/>
-        </LinkButton>
-        <LinkButton color='primary' clickEvent={slideright} form='round' className={styles.nextBtn}>
-            <FontAwesomeIcon icon={faChevronRight}/>
-        </LinkButton>
-    </>
-    }
-    
+        }
+        <h3 className={styles.heading}>{headings[slide]}</h3>
+        <p>Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis tristique quisque hac in consectetur condimentum.</p>
+        {!isSlidingIn && !isSlidingOut && 
+        <>
+            <LinkButton color='primary' clickEvent={slideLeft} form='round' className={styles.prevBtn}>
+                <FontAwesomeIcon icon={faChevronLeft}/>
+            </LinkButton>
+            <LinkButton color='primary' clickEvent={slideright} form='round' className={styles.nextBtn}>
+                <FontAwesomeIcon icon={faChevronRight}/>
+            </LinkButton>
+        </>
+        }
     </>
   )
 }

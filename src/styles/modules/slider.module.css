@@ -1,7 +1,8 @@
 .sliderImages {
     display: flex;
     margin: 3em auto;
-    width: 10em;
+    /* width is dependent on the wrapper from the  parent slideWrapper */
+    width: 10em; 
     min-height: 7em;
     overflow: hidden;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -19,6 +20,8 @@
 .active{
     scale: 1.2;
 }
+
+/* animtions */
 .slideOutLeft {
     animation: slideOutLeft 0.2s ease-out forwards;
 }
@@ -71,6 +74,7 @@
         transform: translateX(0);
     }
 }
+/* media queries */
 @media(min-width: 720px)  {
     .slide {
         width: 33.333%; 
@@ -85,6 +89,7 @@
 @media(min-width: 1340px)  {
     .sliderImages {
         width: 60%;
+        scale: 1;
     }
     .nextBtn {
         right: 10%;
