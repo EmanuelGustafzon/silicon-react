@@ -2,8 +2,10 @@
     display: flex;
     margin: 3em auto;
     width: 10em;
+    min-height: 7em;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
-
 .nextBtn, .prevBtn {
     position: absolute;
     bottom: 50%;
@@ -14,6 +16,61 @@
 .prevBtn {
     left: 2.5em;
 }
+.active{
+    scale: 1.2;
+}
+.slideOutLeft {
+    animation: slideOutLeft 0.2s ease-out forwards;
+}
+.slideInRight {
+    animation: slideInRight 0.2s ease-in forwards;
+}
+@keyframes slideOutLeft {
+    from {
+        opacity: 100;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(200%);
+    }
+}
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-200%);
+    }
+    to {
+        opacity: 100;
+        transform: translateX(0);
+    }
+}
+.slideOutRight {
+    animation: slideOutRight 0.2s ease-out forwards;
+}
+.slideInLeft {
+    animation: slideInLeft 0.2s ease-in forwards;
+}
+@keyframes slideOutRight {
+    from {
+        opacity: 100;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-200%);
+    }
+}
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(200%);
+    }
+    to {
+        opacity: 100;
+        transform: translateX(0);
+    }
+}
 @media(min-width: 720px)  {
     .slide {
         width: 33.333%; 
@@ -22,6 +79,7 @@
     .sliderImages {
         width: 90%;
         scale: 0.8;
+        overflow: visible;
     }
 }
 @media(min-width: 1340px)  {

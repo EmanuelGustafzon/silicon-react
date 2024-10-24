@@ -9,13 +9,32 @@ const Slider = () => {
     const device = useCurrentDevice()
 
     const pictures = ['/slider-phone-1.svg', '/slider-phone-2.svg', '/slider-phone-3.svg']
-    const [ slide, setSlide ] = useState(1);
+    const headings = ['Latest Transaction History','Transfers to People From Your Contact List','Keep Track Of Your Budget']
 
-    const slideLeft = () => {
+    const [ slide, setSlide ] = useState<number>(1);
+    const [ isSlidingOut, setIsSlidingOut ] = useState(false);
+    const [ isSlidingIn, setIsSlidingIn ] = useState(false);
+    const [direction, setDirection] = useState<'left' | 'right'>('right')
+
+    const slideLeft = async () => {
+        setDirection('left')
+        setIsSlidingOut(true)
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        setIsSlidingOut(false)
         setSlide((prevSlide) => slide == 0 ? prevSlide = 2 : prevSlide - 1)
+        setIsSlidingIn(true)
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        setIsSlidingIn(false) 
     }
-    const slideright = () => {
+    const slideright = async () => {
+        setDirection('right')
+        setIsSlidingOut(true)
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        setIsSlidingOut(false)
         setSlide((prevSlide) => slide == 2 ? prevSlide = 0 : prevSlide + 1)
+        setIsSlidingIn(true)
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        setIsSlidingIn(false)            
     }
   return (
     <>
@@ -24,39 +43,64 @@ const Slider = () => {
         <div 
         className={`
             ${styles.slide} 
+            ${isSlidingOut && direction === 'right' && styles.slideOutLeft} 
+            ${isSlidingIn && direction === 'right' && styles.slideInRight} 
+            ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
+            ${isSlidingIn && direction === 'left' && styles.slideInLeft}
             `}>
-            <img loading="lazy" src={pictures[slide]} alt="Sillicon app my budget"/>
+            <img 
+            key={pictures[slide]}
+            loading="lazy" 
+            src={pictures[slide]} 
+            alt="Sillicon app my budget"/>
         </div>
-        
     </div>
     }
     {device === 'desktop' || device == 'tablet' &&
     <div className={styles.sliderImages}>
         <div className={`
             ${styles.slide} 
+            ${isSlidingOut && direction === 'right' && styles.slideOutLeft} 
+            ${isSlidingIn && direction === 'right' && styles.slideInRight} 
+            ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
+            ${isSlidingIn && direction === 'left' && styles.slideInLeft}
             `}>
-            <img loading="lazy" className="leftImage" src={pictures[(slide - 1 + 3)% 3]} alt="Sillicon app my budget"/>
+            <img key={pictures[(slide - 2 + 3)% 3]} loading="lazy" className="leftImage" src={pictures[(slide - 2 + 3)% 3]} alt="Sillicon app my budget"/>
         </div>
         <div className={`
             ${styles.slide} 
+            ${styles.active} 
+            ${isSlidingOut && direction === 'right' && styles.slideOutLeft} 
+            ${isSlidingIn && direction === 'right' && styles.slideInRight} 
+            ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
+            ${isSlidingIn && direction === 'left' && styles.slideInLeft}
             `}>
-            <img loading="lazy" src={pictures[slide]} alt="Sillicon app my budget"/>
+            <img key={pictures[slide]} loading="lazy" src={pictures[slide]} alt="Sillicon app my budget"/>
         </div>
         <div className={`
             ${styles.slide} 
+            ${isSlidingOut && direction === 'left' && styles.slideOutLeft} 
+            ${isSlidingIn && direction === 'left' && styles.slideInRight} 
+            ${isSlidingOut && direction === 'right' && styles.slideOutRight} 
+            ${isSlidingIn && direction === 'right' && styles.slideInLeft}
             `}>
-            <img loading="lazy" className="rightImage" src={pictures[(slide + 1) % 3]} alt="Sillicon app my budget"/>
+            <img key={pictures[(slide + 2) % 3]} loading="lazy" className="rightImage" src={pictures[(slide + 2) % 3]} alt="Sillicon app my budget"/>
         </div>
     </div>
     }
-    <h3 className={styles.heading}>Latest Transaction History</h3>
+    <h3 className={styles.heading}>{headings[slide]}</h3>
     <p>Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis tristique quisque hac in consectetur condimentum.</p>
-    <LinkButton color='primary' clickEvent={slideLeft} form='round' className={styles.prevBtn}>
-        <FontAwesomeIcon icon={faChevronLeft}/>
-    </LinkButton>
-    <LinkButton color='primary' clickEvent={slideright} form='round' className={styles.nextBtn}>
-        <FontAwesomeIcon icon={faChevronRight}/>
-    </LinkButton>
+    {!isSlidingIn && !isSlidingOut && 
+    <>
+        <LinkButton color='primary' clickEvent={slideLeft} form='round' className={styles.prevBtn}>
+            <FontAwesomeIcon icon={faChevronLeft}/>
+        </LinkButton>
+        <LinkButton color='primary' clickEvent={slideright} form='round' className={styles.nextBtn}>
+            <FontAwesomeIcon icon={faChevronRight}/>
+        </LinkButton>
+    </>
+    }
+    
     </>
   )
 }
