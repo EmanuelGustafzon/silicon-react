@@ -6,6 +6,7 @@ import SlideSection from "../sections/SlideSection";
 import Testamonials from "../sections/Testimonials";
 import TransferAndPaymentsFeture from "../sections/TransferAndPaymentsFeture";
 import Faq from "../sections/Faq";
+import Subscribe from "../sections/Subscribe";
 function Home() {
     const device = useCurrentDevice()
     return (
@@ -17,6 +18,7 @@ function Home() {
         { device === 'desktop' && <TransferAndPaymentsFeture/> }
         { device === 'desktop' && <Testamonials/> }
         <Faq/>
+        <Subscribe/>
       </>
     )
   }
