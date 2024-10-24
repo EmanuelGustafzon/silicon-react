@@ -2,6 +2,7 @@ import CompanyLogos from "../components/CompanyLogos";
 import Features from "../sections/Features";
 import Hero from "../sections/Hero";
 import SlideSection from "../sections/SlideSection";
+import TransferAndPaymentsFeture from "../sections/TransferAndPaymentsFeture";
 
 function Home() {
   
@@ -11,6 +12,7 @@ function Home() {
         <CompanyLogos/>
         <Features />
         <SlideSection/>
+        <TransferAndPaymentsFeture/>
       </>
     )
   }
