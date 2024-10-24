@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-const useFetch = (endpoint: string, url?: string) => {
+function useFetch<T = unknown>(endpoint: string, url?: string) {
     const baseUrl = 'https://win24-assignment.azurewebsites.net/api';
     if(!url) url = baseUrl;
     
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const [data, setData] = useState<T | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
         const getData = async () => {
@@ -16,10 +16,9 @@ const useFetch = (endpoint: string, url?: string) => {
                 setData(data);
             } catch(error) {
                 if (error instanceof Error) {
-                    const errorMessage: string = error.message;
-                    setError(errorMessage);
+                    setError(error);
                 } else {
-                    setError("An unknown error occurred");
+                    setError(new Error("An unknown error occurred"));
                 }
                 
             } finally {

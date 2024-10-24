@@ -1,18 +1,22 @@
+import useCurrentDevice from "../hooks/useCurrentDevice";
 import CompanyLogos from "../components/CompanyLogos";
 import Features from "../sections/Features";
 import Hero from "../sections/Hero";
 import SlideSection from "../sections/SlideSection";
+import Testamonials from "../sections/Testimonials";
 import TransferAndPaymentsFeture from "../sections/TransferAndPaymentsFeture";
-
+import Faq from "../sections/Faq";
 function Home() {
-  
+    const device = useCurrentDevice()
     return (
       <>
         <Hero/>
         <CompanyLogos/>
         <Features />
         <SlideSection/>
-        <TransferAndPaymentsFeture/>
+        { device === 'desktop' && <TransferAndPaymentsFeture/> }
+        { device === 'desktop' && <Testamonials/> }
+        <Faq/>
       </>
     )
   }

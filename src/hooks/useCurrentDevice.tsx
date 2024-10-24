@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import ViewWidthContext from '../contexts/viewWidthContext';
-import { viewWidthContextType } from '../types/viewWidthContext';
+import { viewWidthContextType } from '../types/IviewWidthContext';
 
 type deviceType = 'mobile' | 'tablet' | 'desktop';
 

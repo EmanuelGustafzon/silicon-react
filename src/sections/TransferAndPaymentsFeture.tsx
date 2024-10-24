@@ -1,11 +1,8 @@
 import Icon from '../components/Icon';
 import LinkButton from '../components/LinkButton';
 import styles from '../styles/modules/tranferAndPaymentsFeature.module.css';
-import useCurrentDevice from '../hooks/useCurrentDevice';
-const TransferAndPaymentsFeture = () => {
-    const device = useCurrentDevice();
-    if(device !== 'desktop') return;
 
+const TransferAndPaymentsFeture = () => {
   return (
     <section className={styles.featureTranfersAndPayments}>
             <div className={styles.transfers}>

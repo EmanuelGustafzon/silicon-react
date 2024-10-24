@@ -1,7 +1,7 @@
 
 import { createContext } from 'react';
-import { themeContextType } from '../types/themeContext'
+import { IThemeContextType } from '../types/IthemeContext'
 
-const ThemeContext = createContext<themeContextType | undefined>(undefined);
+const ThemeContext = createContext<IThemeContextType | undefined>(undefined);
 
 export default ThemeContext;

@@ -1,4 +1,4 @@
-export interface viewWidthContextType {
+export interface IViewWidthContextType {
     viewWidth: number;
     setViewWidth: (viewWidth: number) => void;
   }
