@@ -17,7 +17,8 @@ const BurgerMenu = () => {
         <div>
         {hidden && 
             <nav id="main-menu" className={styles.links} aria-hidden={!hidden}>
-                <a href="#features">Features</a>
+                <a href="/">Features</a>
+                <a href="/contact">Contact</a>
                 <a href="#"  id="login-mobile">Sign in / up</a>
             </nav>
         }

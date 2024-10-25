@@ -16,7 +16,7 @@ const Navbar = () => {
             </a>      
             <nav className={navStyles.links}>
                 <a href="#features" className={navStyles.navLink}>Features</a>
-                <a href="#features" className={navStyles.navLink}>Contact</a>
+                <a href="/contact" className={navStyles.navLink}>Contact</a>
             </nav>     
             <ThemeSwitch/>
             <a href="/" className={`${buttonStyles.btn} ${buttonStyles.brand} ${buttonStyles.medium} ${navStyles.signin}`}>

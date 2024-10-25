@@ -49,7 +49,6 @@ const Slider = () => {
                 ${isSlidingIn && direction === 'left' && styles.slideInLeft}
                 `}>
                 <img 
-                loading="lazy" 
                 src={pictures[slide]} 
                 alt="Sillicon app my budget"/>
             </div>
