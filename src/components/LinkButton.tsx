@@ -4,15 +4,16 @@ import { ReactNode } from 'react';
 
 interface LinkButtonProps {
     children: ReactNode;
+    color: 'white' | 'brand' | 'primary' | 'secondary';
     link?: string;
     clickEvent?: () => void;
-    color: 'white' | 'brand' | 'primary' | 'secondary';
     size?: 'small' | 'medium' | 'large';
     form?: 'round' | 'square';
     className?: string;
+    disable?: boolean;
 }
 
-const LinkButton: React.FC<LinkButtonProps> = ({ children, link, clickEvent, color, size, form, className}) => {
+const LinkButton: React.FC<LinkButtonProps> = ({ children, link, clickEvent, color, size, form, className, disable}) => {
     const { theme } = useTheme();
 
     if(link && clickEvent) {
@@ -39,7 +40,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, link, clickEvent, col
         </a> 
     }
     { clickEvent &&
-        <button onClick={clickEvent} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+        <button disabled={disable} onClick={clickEvent} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
             { children }
         </button>
     }

@@ -49,7 +49,6 @@ const Slider = () => {
                 ${isSlidingIn && direction === 'left' && styles.slideInLeft}
                 `}>
                 <img 
-                key={pictures[slide]}
                 loading="lazy" 
                 src={pictures[slide]} 
                 alt="Sillicon app my budget"/>
@@ -89,17 +88,13 @@ const Slider = () => {
         </div>
         }
         <h3 className={styles.heading}>{headings[slide]}</h3>
-        <p>Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis tristique quisque hac in consectetur condimentum.</p>
-        {!isSlidingIn && !isSlidingOut && 
-        <>
-            <LinkButton color='primary' clickEvent={slideLeft} form='round' className={styles.prevBtn}>
-                <FontAwesomeIcon icon={faChevronLeft}/>
-            </LinkButton>
-            <LinkButton color='primary' clickEvent={slideright} form='round' className={styles.nextBtn}>
-                <FontAwesomeIcon icon={faChevronRight}/>
-            </LinkButton>
-        </>
-        }
+        <p>Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis tristique quisque hac in consectetur condimentum.</p> 
+        <LinkButton disable={(isSlidingIn || isSlidingOut)} color='primary' clickEvent={slideLeft} form='round' className={styles.prevBtn}>
+            <FontAwesomeIcon icon={faChevronLeft}/>
+        </LinkButton>
+        <LinkButton disable={(isSlidingIn || isSlidingOut)} color='primary' clickEvent={slideright} form='round' className={styles.nextBtn}>
+            <FontAwesomeIcon icon={faChevronRight}/>
+        </LinkButton>
     </>
   )
 }

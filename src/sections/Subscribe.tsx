@@ -1,5 +1,6 @@
-import styles from '../styles/modules/subscribe.module.css'
-import btnStyles from '../styles/modules/button.module.css'
+import styles from '../styles/modules/subscribe.module.css';
+import btnStyles from '../styles/modules/button.module.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 const Subscribe = () => {
   return (
@@ -13,7 +14,7 @@ const Subscribe = () => {
                     </div>
                 </div>
                 <form>   
-                    <input required type="email" name="email" id="emailInput" placeholder="&#xf003;  Your Email" />
+                    <input required type="email" name="email" id="emailInput" placeholder="&#xf003;  Your Email" style={{fontFamily: 'Manrope, Helvetica, sans-serif, FontAwesome'}}/>
                     <button className={`${btnStyles.btn} ${btnStyles.brand}`}>Subscribe</button>
                 </form>
             </div>
