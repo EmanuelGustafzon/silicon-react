@@ -33,7 +33,7 @@
             outline-color: var(--brand-primary);
         }
     }
-    button {
+    .subscribeBtn {
         height: 100%;
         width: 40%;
         padding-left: 2em;

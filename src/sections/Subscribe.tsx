@@ -15,7 +15,7 @@ const Subscribe = () => {
                 </div>
                 <form>   
                     <input required type="email" name="email" id="emailInput" placeholder="&#xf003;  Your Email" style={{fontFamily: 'Manrope, Helvetica, sans-serif, FontAwesome'}}/>
-                    <button className={`${btnStyles.btn} ${btnStyles.brand}`}>Subscribe</button>
+                    <button className={`${btnStyles.brand} ${styles.subscribeBtn}`}>Subscribe</button>
                 </form>
             </div>
         </section>
