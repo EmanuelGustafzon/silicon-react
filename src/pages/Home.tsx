@@ -12,7 +12,7 @@ function Home() {
     return (
       <>
         <Hero/>
-        <CompanyLogos/>
+        { device !== 'mobile' && <CompanyLogos/> }
         <Features />
         <SlideSection/>
         { device === 'desktop' && <TransferAndPaymentsFeture/> }

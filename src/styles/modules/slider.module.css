@@ -1,11 +1,13 @@
 .sliderImages {
     display: flex;
     margin: 3em auto;
-    /* width is dependent on the wrapper from the  parent slideWrapper */
     width: 10em; 
     min-height: 7em;
     overflow: hidden;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.slideImage {
+    width: 10em;
 }
 .nextBtn, .prevBtn {
     position: absolute;
