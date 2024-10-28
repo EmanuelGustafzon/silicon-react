@@ -14,7 +14,7 @@ const TransferAndPaymentsFeture = () => {
                         <li><img loading="lazy" src="/check-circle-icon.svg" alt="checkbox"/><span>Manage payments and transactions online</span></li>
                     </ul>
                     <div className={styles.link}>
-                        <LinkButton link='/' color='brand' size='medium'>
+                        <LinkButton justStyles={true} color='brand' size='medium'>
                             {`Learn more ->`}
                         </LinkButton> 
                     </div>
@@ -41,7 +41,7 @@ const TransferAndPaymentsFeture = () => {
                         </div>
                     </div>
                     <div className={styles.link}>
-                        <LinkButton link='/' color='brand' size='medium'>
+                        <LinkButton justStyles={true} color='brand' size='medium'>
                             {`Learn more ->`}
                         </LinkButton> 
                     </div>

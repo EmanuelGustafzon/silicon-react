@@ -21,11 +21,11 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, color, justStyles = f
         console.log('Not possible to have a click event and a link, choose one')
         return
     }
-    if(justStyles && link || justStyles || clickEvent) {
+    if(justStyles && link || justStyles && clickEvent) {
         console.log('You cannot set just styles to true and also have a link or onclick event');
         return
     }
-    
+
     const colors = {
         white: theme === 'dark' ? styles.darkWhite : styles.white,
         primary: theme === 'dark' ? styles.darkPrimary : styles.primary,
@@ -40,7 +40,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, color, justStyles = f
   return (
     <>
     { link &&
-        <a href={link} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+        <a href={link} target='_blank' className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
             { children }
         </a> 
     }
@@ -51,7 +51,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, color, justStyles = f
     }
     {
         justStyles &&
-        <div className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+        <div style={{display: 'inline'}} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
             { children }
         </div> 
     }
