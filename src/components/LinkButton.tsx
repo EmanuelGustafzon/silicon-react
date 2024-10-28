@@ -21,7 +21,11 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, color, justStyles = f
         console.log('Not possible to have a click event and a link, choose one')
         return
     }
-
+    if(justStyles && link || justStyles || clickEvent) {
+        console.log('You cannot set just styles to true and also have a link or onclick event');
+        return
+    }
+    
     const colors = {
         white: theme === 'dark' ? styles.darkWhite : styles.white,
         primary: theme === 'dark' ? styles.darkPrimary : styles.primary,
