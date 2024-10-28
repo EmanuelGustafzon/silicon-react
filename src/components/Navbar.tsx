@@ -24,12 +24,10 @@ const Navbar = () => {
             <ThemeSwitch/>
 
             {device === 'desktop' && 
-                <Link to="/">
-                    <LinkButton justStyles={true} color='brand' size='medium' className={styles.signin}>
-                        <FontAwesomeIcon icon={faUser}/> 
-                        <span> Sign in / up</span>
-                    </LinkButton>
-                </Link>
+                <LinkButton internalLink='/' color='brand' size='medium' className={styles.signin}>
+                    <FontAwesomeIcon icon={faUser}/> 
+                    <span> Sign in / up</span>
+                </LinkButton>
             } 
             
             { device !== 'desktop' && <BurgerMenu/> }

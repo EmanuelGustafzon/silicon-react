@@ -1,6 +1,7 @@
 import styles from '../styles/modules/button.module.css';
 import useTheme from '../hooks/useTheme';
 import { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 interface LinkButtonProps {
     children: ReactNode;
@@ -8,13 +9,14 @@ interface LinkButtonProps {
     justStyles?: boolean,
     link?: string;
     clickEvent?: () => void;
+    internalLink?: string, 
     size?: 'small' | 'medium' | 'large';
     form?: 'round' | 'square';
     className?: string;
     disable?: boolean;
 }
 
-const LinkButton: React.FC<LinkButtonProps> = ({ children, color, justStyles = false, link, clickEvent, size, form, className, disable}) => {
+const LinkButton: React.FC<LinkButtonProps> = ({ children, color, justStyles = false, link, internalLink, clickEvent, size, form, className, disable}) => {
     const { theme } = useTheme();
 
     if(link && clickEvent) {
@@ -49,9 +51,13 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, color, justStyles = f
             { children }
         </button>
     }
-    {
-        justStyles &&
-        <div style={{display: 'inline'}} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+    { internalLink &&
+        <Link to={internalLink} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+            { children }
+        </Link> 
+    }
+    { justStyles &&
+        <div className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
             { children }
         </div> 
     }
