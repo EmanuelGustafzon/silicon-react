@@ -45,6 +45,7 @@
     }
     .signin {
         display: block;
+        margin-left: 32px;
     }
     .links {
         position: relative;
@@ -65,8 +66,5 @@
     }
     .navLink:hover {
         color: var(--brand-primary);
-    }
-    .signin {
-        margin-left: 32px;
     }
 }

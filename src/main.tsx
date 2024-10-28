@@ -5,15 +5,18 @@ import { ThemeProvider } from './contexts/themeProvider.tsx'
 import MainLayout from './layouts/MainLayout.tsx'
 import ViewWidthProvider from './contexts/viewWidthProvider.tsx'
 import App from './App.tsx'
+import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider>
-      <ViewWidthProvider>
-        <MainLayout>
-          <App />
-        </MainLayout>
-      </ViewWidthProvider>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider>
+        <ViewWidthProvider>
+          <MainLayout>
+            <App />
+          </MainLayout>
+        </ViewWidthProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </StrictMode>,
 )

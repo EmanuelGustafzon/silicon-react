@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 interface LinkButtonProps {
     children: ReactNode;
     color: 'white' | 'brand' | 'primary' | 'secondary';
+    justStyles?: boolean,
     link?: string;
     clickEvent?: () => void;
     size?: 'small' | 'medium' | 'large';
@@ -13,7 +14,7 @@ interface LinkButtonProps {
     disable?: boolean;
 }
 
-const LinkButton: React.FC<LinkButtonProps> = ({ children, link, clickEvent, color, size, form, className, disable}) => {
+const LinkButton: React.FC<LinkButtonProps> = ({ children, color, justStyles = false, link, clickEvent, size, form, className, disable}) => {
     const { theme } = useTheme();
 
     if(link && clickEvent) {
@@ -34,7 +35,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, link, clickEvent, col
 
   return (
     <>
-    { link && 
+    { link &&
         <a href={link} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
             { children }
         </a> 
@@ -43,6 +44,12 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, link, clickEvent, col
         <button disabled={disable} onClick={clickEvent} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
             { children }
         </button>
+    }
+    {
+        justStyles &&
+        <div className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+            { children }
+        </div> 
     }
     </>
   )

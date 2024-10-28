@@ -2,7 +2,7 @@ import Feature from '../components/Feature'
 import styles from '../styles/modules/features.module.css'
 const Features = () => {
   return (
-    <section className={styles.features}>
+    <section id='features' className={styles.features}>
             <div className={styles.featuresIphoneImage}>
                 <img loading="lazy" src="/features-section-iphone.svg" alt="Iphone with Sillicon app"/>
             </div>

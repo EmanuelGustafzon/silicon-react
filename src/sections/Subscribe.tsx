@@ -7,7 +7,7 @@ import formValidator from '../services/formValidator';
 
 const Subscribe = () => {
     const [ data, setData ] = useState({email: ''});
-    const {send, response, error, loading} = useSendData('subscribe');
+    const {makeRequest, response, error, loading} = useSendData('subscribe');
     const [inputError, setInputError] = useState({email: false})
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +34,7 @@ const Subscribe = () => {
             ...prev,
             email: false
         }))
-        await send(data)
+        await makeRequest(data)
     }
 
   return (

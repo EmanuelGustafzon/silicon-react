@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/modules/burgerMenu.module.css';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const BurgerMenu = () => {
     const [ hidden, setHidden ] = useState(false);
@@ -16,10 +18,10 @@ const BurgerMenu = () => {
         </button>
         <div>
         {hidden && 
-            <nav id="main-menu" className={styles.links} aria-hidden={!hidden}>
-                <a href="/">Features</a>
-                <a href="/contact">Contact</a>
-                <a href="#"  id="login-mobile">Sign in / up</a>
+            <nav onClick={() => setHidden((open) => open = !open)} id="main-menu" className={styles.links} aria-hidden={!hidden}>
+                <HashLink smooth to="/#features">Features</HashLink>
+                <Link to="/contact">Contact</Link>
+                <Link to="/"  id="login-mobile">Sign in / up</Link>
             </nav>
         }
         </div>

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple } from '@fortawesome/free-brands-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import LinkButton from '../components/LinkButton';
+import { HashLink } from 'react-router-hash-link';
 
 const Hero = () => {
   return (
@@ -32,9 +33,11 @@ const Hero = () => {
                 </LinkButton>
             </div>
             <div className={styles.bannerScrollToDiscover}>
-                <LinkButton link='/' color='white' form='round'>
-                    <FontAwesomeIcon icon={faChevronDown}/>
-                </LinkButton>
+                <HashLink smooth to='/#features'>
+                    <LinkButton justStyles={true} color='white' form='round'>
+                        <FontAwesomeIcon icon={faChevronDown}/>
+                    </LinkButton>
+                </HashLink>
                 <span>Discover more</span>
             </div>
         </div>

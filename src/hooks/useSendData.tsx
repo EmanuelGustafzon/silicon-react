@@ -8,7 +8,7 @@ function useSendData(endpoint: string, url?: string) {
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<Error | null>(null);
 
-    const send = async (data: unknown) => {
+    const makeRequest = async (data: unknown) => {
         setLoading(true)
         try {
             const res = await fetch(`${url}/${endpoint}`, { 
@@ -31,7 +31,7 @@ function useSendData(endpoint: string, url?: string) {
     }
 };
     return {
-        send,
+        makeRequest,
         response,
         loading,
         error
