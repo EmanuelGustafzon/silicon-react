@@ -11,28 +11,28 @@ const Navbar = () => {
     const device = useCurrentDevice();
   return (
     <>
-    <header>
-        <div className={styles.navWrapper}>
-            <Link to="/" className={styles.logoLink}>
-                <img loading="lazy" src="logo-silicon.svg" alt="Silicon Logo"/>
-                <h1 className={styles.logoName}>Sillicon</h1>
-            </Link>      
-            <nav className={styles.links}>
-                <HashLink to="/#features" className={styles.navLink}>Features</HashLink>
-                <Link to="/contact" className={styles.navLink}>Contact</Link>
-            </nav>     
-            <ThemeSwitch/>
+        <header>
+            <div className={styles.navWrapper}>
+                <Link to="/" className={styles.logoLink}>
+                    <img loading="lazy" src="logo-silicon.svg" alt="Silicon Logo"/>
+                    <h1 className={styles.logoName}>Sillicon</h1>
+                </Link>      
+                <nav className={styles.links}>
+                    <HashLink to="/#features" className={styles.navLink}>Features</HashLink>
+                    <Link to="/contact" className={styles.navLink}>Contact</Link>
+                </nav>     
+                <ThemeSwitch/>
 
-            {device === 'desktop' && 
-                <LinkButton internalLink='/' color='brand' size='medium' className={styles.signin}>
-                    <FontAwesomeIcon icon={faUser}/> 
-                    <span> Sign in / up</span>
-                </LinkButton>
-            } 
-            
-            { device !== 'desktop' && <BurgerMenu/> }
-        </div>
-    </header>
+                {device === 'desktop' && 
+                    <LinkButton internalLink='/' color='brand' size='medium' className={styles.signin}>
+                        <FontAwesomeIcon icon={faUser}/> 
+                        <span> Sign in / up</span>
+                    </LinkButton>
+                } 
+                
+                { device !== 'desktop' && <BurgerMenu/> }
+            </div>
+        </header>
     </>
   )
 }

@@ -45,10 +45,9 @@ const Faq = () => {
                     <Accordion 
                         key={accordion.id}
                         title={accordion.title}
-                        content={accordion.content} id={''}                        
-                    />
+                        content={accordion.content} id={''}/>
                     ))
-                }
+            }
         </div>
     </section>
 

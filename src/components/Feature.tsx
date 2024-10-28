@@ -10,13 +10,13 @@ interface featureProps {
 
 const Feature: React.FC<featureProps> = ({iconSrc, iconAltText, heading, content}) => {
   return (
-        <div className={styles.featuresCard}>
-            <Icon iconSrc={iconSrc} altText={iconAltText}/>
-            <div>
-                <h3>{heading}</h3>
-                <p>{content}</p>
-            </div>
-        </div>   
+    <div className={styles.featuresCard}>
+      <Icon iconSrc={iconSrc} altText={iconAltText}/>
+      <div>
+          <h3>{heading}</h3>
+          <p>{content}</p>
+      </div>
+    </div>   
   )
 }
 

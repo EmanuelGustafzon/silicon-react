@@ -27,9 +27,9 @@ function useSendData(endpoint: string, url?: string) {
             }
             
         } finally {
-        setLoading(false)
-    }
-};
+            setLoading(false)
+        }
+    };
     return {
         makeRequest,
         response,

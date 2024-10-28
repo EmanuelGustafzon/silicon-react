@@ -1,10 +1,9 @@
-import styles from '../styles/modules/faq.module.css'
+import styles from '../styles/modules/accordion.module.css'
 import LinkButton from './LinkButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { IAccordion } from '../types/IAccordion';
-
 
 const Accordion: React.FC<IAccordion> = ({ title, content }) => {
     const [open, setOpen] = useState(false)

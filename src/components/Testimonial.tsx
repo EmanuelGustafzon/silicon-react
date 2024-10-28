@@ -17,7 +17,7 @@ const Testimonial: React.FC<ITestimonial> = ({ author, jobRole, starRating, avat
       
     return (
         <>
-        <div className={styles.testamonialsCard}>
+            <div className={styles.testamonialsCard}>
                 <div className={styles.citatImg}>
                     <img loading="lazy" src="/quotes.svg" alt="quotes"/>
                 </div>

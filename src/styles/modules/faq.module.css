@@ -31,38 +31,7 @@
 .accordions {
     grid-area: accordions;
 } 
-.accordion {
-    border-radius: 8px;
-    box-shadow:  0 1px 5px rgba(61, 56, 56, 0.2);
-    column-gap: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-bottom: 12px;
-}
-body[data-theme="dark"] .accordion {
-    background-color: var(--white-05);
-}
-.questionWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 62px;
-}
-.question {
-    font: var(--m-text);
-    flex: flex-start;
-    width: 80%;
-}
-.question .arrowBtn {
-    transition: background-color 0.5s ease;
-}
-.answer {
-    font: var(--m-text);
-    padding: 24px 24px;
-    max-height: 500px;
-    opacity: 1;
-    transition: max-height 0.6s ease-in-out, opacity 0.3s linear 0.5s;
-}
+
 @media(min-width: 720px) {
     .faq {
         max-width: 720px;

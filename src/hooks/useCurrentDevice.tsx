@@ -5,10 +5,10 @@ import { IViewWidthContextType } from '../types/IviewWidthContext';
 type deviceType = 'mobile' | 'tablet' | 'desktop';
 
 const useCurrentDevice = () => {
+
     const viewWidthContext= useContext<IViewWidthContextType | undefined>(ViewWidthContext)
-    if (viewWidthContext === undefined) {
-        throw new Error('useTheme must be used within a ThemeProvider');
-    }
+    
+    if (viewWidthContext === undefined) throw new Error('useTheme must be used within a ThemeProvider');
 
     const { viewWidth } = viewWidthContext;
 
