@@ -2,13 +2,19 @@ import styles from '../styles/modules/testimonialsSection.module.css'
 import { ITestimonial } from '../types/ITestimonial';
 
 const Testimonial: React.FC<ITestimonial> = ({ author, jobRole, starRating, avatarUrl, comment }) => {
+
     const getRating = (rating: number) => {
         const stars = [];
-        for (let i = 0; i < rating; i++) {
-            stars.push(<img key={i} loading="lazy" src="/star.svg" alt="star"/>);
+        for (let i = 0; i <= 5; i++) {
+            if(i <= rating) {
+                stars.push(<img key={i} loading="lazy" src="/star.svg" alt="star"/>);
+            } else {
+                stars.push(<img key={i} loading="lazy" src="/star-not-filled.svg" alt="not filled star"/>);
+            }
         }
         return stars;
       };
+      
     return (
         <>
         <div className={styles.testamonialsCard}>
