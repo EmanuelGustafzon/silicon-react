@@ -1,6 +1,10 @@
+import Map from "../components/Map"
+
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <div>
+      <Map/>
+    </div>
   )
 }
 

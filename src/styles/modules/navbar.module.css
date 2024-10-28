@@ -18,6 +18,9 @@
 .logoName {
     font: var(--xl-text);
 }
+.signin {
+    display: none;
+}
 .links {
     display: none;
 }
@@ -41,6 +44,7 @@
         gap: 32px;
     }
     .signin {
+        display: block;
         margin-left: 32px;
     }
     .links {

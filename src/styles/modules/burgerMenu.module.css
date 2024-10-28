@@ -1,9 +1,11 @@
 .burgerMenu {
-    display: block;
     font-size: 1.5em;
     color: var(--color);
     border-width: 0;
     background-color: transparent;
+    @media(min-width: 1340px) {
+        display: none;
+    }
 }
 .links {
     position: absolute;

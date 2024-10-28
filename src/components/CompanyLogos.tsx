@@ -29,7 +29,7 @@ const CompanyLogos = () => {
             </>
             }
         </div>
-  )
+    )
 }
 
 export default CompanyLogos

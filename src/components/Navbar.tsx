@@ -6,9 +6,8 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import LinkButton from './LinkButton';
-import useCurrentDevice from '../hooks/useCurrentDevice';
+
 const Navbar = () => {
-    const device = useCurrentDevice();
   return (
     <>
         <header>
@@ -22,15 +21,11 @@ const Navbar = () => {
                     <Link to="/contact" className={styles.navLink}>Contact</Link>
                 </nav>     
                 <ThemeSwitch/>
-
-                {device === 'desktop' && 
-                    <LinkButton internalLink='/' color='brand' size='medium' className={styles.signin}>
-                        <FontAwesomeIcon icon={faUser}/> 
-                        <span> Sign in / up</span>
-                    </LinkButton>
-                } 
-                
-                { device !== 'desktop' && <BurgerMenu/> }
+                <LinkButton internalLink='/' color='brand' size='medium' className={styles.signin}>
+                    <FontAwesomeIcon icon={faUser}/> 
+                    <span> Sign in / up</span>
+                </LinkButton>
+                <BurgerMenu/>
             </div>
         </header>
     </>
