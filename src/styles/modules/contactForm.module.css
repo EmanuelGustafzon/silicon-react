@@ -1,6 +1,6 @@
 .formWrapper {
     display: grid;
-    width: 80%;
+    width: 90%;
     row-gap: 1.5em;
     margin: auto auto;
     padding-left: 3em;
@@ -45,5 +45,6 @@
 @media(min-width: 720px) {
     .formWrapper {
         width: 30em;
+        width: 80%;
     }
 }
