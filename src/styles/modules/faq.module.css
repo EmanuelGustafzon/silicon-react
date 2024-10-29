@@ -60,9 +60,6 @@
         row-gap: 20px;
         padding-left: 20px;
     }
-    body[data-theme="dark"] .contactCard {
-        color: var(--white-70);
-    }
     .contactPhone {
         color: var(--info);
         padding-right: 20px;

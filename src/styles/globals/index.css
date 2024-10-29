@@ -14,23 +14,31 @@
 :root {
   --bg-primary: var(--white);
   --bg-secondary: var(--gray-100);
+  --bg-white: var(--white);
   --color: var(--gray-900);
   --border-color: var(--gray-400);
 }
-body[data-theme="dark"] {
+.light-theme {
+  --bg-primary: var(--white);
+  --bg-secondary: var(--gray-100);
+  --bg-white: var(--white);
+  --color: var(--gray-900);
+  --border-color: var(--gray-400);
+}
+.dark-theme {
   --bg-primary: var(--gray-900);
   --bg-secondary: var(--white-05);
+  --bg-white: var(--white-05);
   --color: var(--white-70);
   --border-color: var(--white-70);
   h1, h2, h3, h4, h5, h6 {
       color: var(--white);
   }
 }
-body {
+.main-layout {
   font-family: var(--font-stack);
   background-color: var(--bg-primary);
   color: var(--color);
-
   transition: background-color 0.5s ease;
 }
 a {

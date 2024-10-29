@@ -23,6 +23,3 @@
         color: var(--white);
     }
 }
-.links[aria-hidden="true"] {
-    display: none;
-}

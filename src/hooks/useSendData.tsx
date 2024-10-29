@@ -30,6 +30,7 @@ function useSendData(endpoint: string, url?: string) {
             setLoading(false)
         }
     };
+    
     return {
         makeRequest,
         response,
