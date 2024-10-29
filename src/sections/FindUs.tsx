@@ -9,7 +9,10 @@ const FindUs = () => {
     <section className={styles.section}>
         <div className={styles.wrapper}>
             <div className={styles.mapWrapper}>
-                <Map width={device === 'mobile' ? '100%' : '45em'} height={device === 'mobile' ? '30em' : '40em'}/>
+                {device === 'mobile' && <Map width='100%' height='30em'/>}
+                {device === 'tablet' && <Map width='720px' height='30em'/>}
+                {device === 'desktop' && <Map width='45em' height='40em'/>}
+                
             </div>
             <div className={styles.addressCardsWrapper}>
                 <div className={styles.addressCard}>

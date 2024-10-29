@@ -1,10 +1,6 @@
 .section {
     background-color: var(--bg-secondary);
     margin-top: -80px;
-    h1 {
-        margin-bottom: 2em;
-        justify-self: center;
-    }
 }
 .wrapper {
     padding-top: 100px;
@@ -14,6 +10,10 @@
     margin: auto auto;
     padding-left: 5px;
     padding-right: 5px;
+    h1 {
+        margin-bottom: 2em;
+        justify-self: center;
+    }
 }
 .contactCard {
     display: grid;
@@ -42,6 +42,10 @@
     .contactForm {
         margin-bottom: -80px;
     }
+    .contactCardWrapper {
+        display: flex;
+        margin-bottom: 2em;
+    }
     .contactCard {
         display: grid;
         width: 50%;
@@ -59,6 +63,9 @@
         h1 {
             justify-self: start;
         }
+    }
+    .contactCardWrapper {
+        display: grid;
     }
     .contactCard {
         display: grid;
