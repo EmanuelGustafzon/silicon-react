@@ -1,12 +1,11 @@
-import ContactForm from "../components/ContactForm"
-import Map from "../components/Map"
+import ContactSection from "../sections/ContactSection"
+import FindUs from "../sections/FindUs"
 
 const Contact = () => {
   return (
     <div>
-      <ContactForm/>
-      <div></div>
-      <Map width="50%" height="400px"/>
+      <ContactSection/>
+      <FindUs/>
     </div>
   )
 }

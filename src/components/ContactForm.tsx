@@ -12,7 +12,7 @@ interface IContact {
     specialist: ISpecialist
 }
 
-const ContactForm = () => {
+const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
     const { makeRequest, error, loading, response } = useSendData('contact');
 
     const [formData, setFormData] = useState<IContact>({
@@ -56,7 +56,7 @@ const ContactForm = () => {
     }
 
   return (
-    <div className={styles.formWrapper}>
+    <div className={`${styles.formWrapper} ${parentClassName && parentClassName}`}>
       <h2>Get Online Consoluting</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label> Full name

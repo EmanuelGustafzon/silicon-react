@@ -1,0 +1,38 @@
+.section {
+    margin-top: 120px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
+.wrapper {
+    margin: auto auto;
+}
+.mapWrapper {
+    margin: 3em auto;
+}
+.addressCardsWrapper{
+    margin: auto auto;
+}
+.addressCard {
+    display: grid;
+    row-gap: 0.75em;
+    margin-bottom: 2em;
+}
+.openHour {
+    display: flex;
+    column-gap: 0.25em;
+}
+
+@media(min-width: 720px) {
+    .wrapper {
+        max-width: 720px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media(min-width: 1340px) {
+    .wrapper {
+        max-width: 1340px;
+        grid-template-columns: auto auto;
+    }
+}
