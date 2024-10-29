@@ -1,29 +1,70 @@
 .section {
     background-color: var(--bg-secondary);
     margin-top: -80px;
+    h1 {
+        margin-bottom: 2em;
+        justify-self: center;
+    }
 }
 .wrapper {
     padding-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;  
     margin: auto auto;
     padding-left: 5px;
     padding-right: 5px;
+}
+.contactCard {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 80px auto;
+    justify-self: center;
+    margin-bottom: 2em;
+}
+.cardContent {
+    display: grid;
+    row-gap: 1.5em;
+    h3 {
+        margin-bottom: 0.5em;
+    }
+    a {
+        color: var(--brand-primary);
+    }
 }
 
 @media(min-width: 720px) {
     .wrapper {
         max-width: 720px;
-        display: grid;
-        grid-template-columns: 1fr auto;
         padding-left: 20px;
         padding-right: 20px;
     }
     .contactForm {
         margin-bottom: -80px;
     }
+    .contactCard {
+        display: grid;
+        width: 50%;
+        grid-template-columns: 80px auto;
+        justify-self: center;
+        margin-bottom: 2em;
+    }
 }
 
 @media(min-width: 1340px) {
     .wrapper {
         max-width: 1340px;
+        grid-template-columns: 1fr 1fr;
+        justify-content:space-around;
+        h1 {
+            justify-self: start;
+        }
+    }
+    .contactCard {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 80px auto;
+        justify-self: end;
+        margin-bottom: 2em;
     }
 }

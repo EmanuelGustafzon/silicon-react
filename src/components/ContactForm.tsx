@@ -62,13 +62,13 @@ const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
         <label> Full name
           <div>
             <input type="text" name="fullname" onChange={handleChange}/>
-            { !inputError.fullname &&  <p className={styles.error}>feedback</p>}
+            { !inputError.fullname &&  <p className={styles.error}>Provide your first and last name</p>}
           </div>
         </label>
         <label> Email address
           <div>
             <input type="email" name="email" onChange={handleChange}/>
-            { !inputError.email && <p className={styles.error}>feedback</p> }
+            { !inputError.email && <p className={styles.error}>provide a valid email</p> }
           </div>
         </label>
         <label> Specialist
