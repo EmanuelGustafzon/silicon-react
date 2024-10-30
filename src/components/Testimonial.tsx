@@ -5,8 +5,9 @@ const Testimonial: React.FC<ITestimonial> = ({ author, jobRole, starRating, avat
 
     const getRating = (rating: number) => {
         const stars = [];
-        for (let i = 0; i <= 5; i++) {
-            if(i <= rating) {
+        for (let i = 0; i < 5; i++) {
+            if(i < rating) {
+                // Index is used because the number of stars is fixed 
                 stars.push(<img key={i} loading="lazy" src="/star.svg" alt="star"/>);
             } else {
                 stars.push(<img key={i} loading="lazy" src="/star-not-filled.svg" alt="not filled star"/>);
