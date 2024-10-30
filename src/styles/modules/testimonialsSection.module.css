@@ -56,10 +56,5 @@
     }
     .name {
         font: var(--l-text);
-        color: var(--gray-900);
-        
     }
-}
-body[data-theme="dark"] .name {
-    color: var(--white);
 }
