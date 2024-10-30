@@ -10,7 +10,6 @@ const Slider = () => {
 
     const pictures = ['/slider-phone-1.svg', '/slider-phone-2.svg', '/slider-phone-3.svg']
     const headings = ['Latest Transaction History','Transfers to People From Your Contact List','Keep Track Of Your Budget']
-
     const [ slide, setSlide ] = useState<number>(1);
     const [ isSlidingOut, setIsSlidingOut ] = useState(false);
     const [ isSlidingIn, setIsSlidingIn ] = useState(false);
@@ -19,21 +18,21 @@ const Slider = () => {
     const slideLeft = async () => {
         setDirection('left')
         setIsSlidingOut(true)
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 250));
         setSlide((prevSlide) => slide == 0 ? prevSlide = 2 : prevSlide - 1)
         setIsSlidingOut(false)
         setIsSlidingIn(true)
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 250));
         setIsSlidingIn(false) 
     }
     const slideright = async () => {
         setDirection('right')
         setIsSlidingOut(true)
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 250));
         setSlide((prevSlide) => slide == 2 ? prevSlide = 0 : prevSlide + 1)
         setIsSlidingOut(false)
         setIsSlidingIn(true)
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 250));
         setIsSlidingIn(false)            
     }
   return (
@@ -48,10 +47,7 @@ const Slider = () => {
                 ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
                 ${isSlidingIn && direction === 'left' && styles.slideInLeft}
                 `}>
-                <img 
-                src={pictures[slide]} 
-                className={styles.slideImage}
-                alt={headings[slide]}/>
+                <img src={pictures[slide]} className={styles.slideImage} alt={headings[slide]}/>
             </div>
         </div>
         }
