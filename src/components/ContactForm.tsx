@@ -46,27 +46,28 @@ const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
       }
 
       makeRequest(formData)
+      setFormData(prev => ({...prev, fullname: '', email: ''}))
     }
 
   return (
     <div className={`${styles.formWrapper} ${parentClassName && parentClassName}`}>
       <h2>Get Online Consoluting</h2>
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form noValidate className={styles.form} onSubmit={handleSubmit}>
         <label> Full name
           <div>
-            <input type="text" name="fullname" onChange={handleChange}/>
+            <input type="text" name="fullname" value={formData.fullname} onChange={handleChange}/>
             { inputError.fullname !== '' &&  <p className={styles.error}>{inputError.fullname}</p>}
           </div>
         </label>
         <label> Email address
           <div>
-            <input type="email" name="email" onChange={handleChange}/>
+            <input type="email" name="email" value={formData.email} onChange={handleChange}/>
             { inputError.email !== '' && <p className={styles.error}>{inputError.email}</p> }
           </div>
         </label>
         <label> Specialist
           <div>
-            <select name="specialist" onChange={handleChange}>
+            <select name="specialist" value={formData.specialist} onChange={handleChange}>
               <option value='Neurology'> Neurology </option>
               <option value='Ophthalmic Surgery'> Ophthalmic Surgery </option>
               <option value='Pathology'>Pathology</option>

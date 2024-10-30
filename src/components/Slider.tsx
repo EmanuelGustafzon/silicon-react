@@ -64,7 +64,7 @@ const Slider = () => {
                 ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
                 ${isSlidingIn && direction === 'left' && styles.slideInLeft}
                 `}>
-                <img key={pictures[(slide - 2 + 3)% 3]} loading="lazy" className={styles.slideImage} src={pictures[(slide - 2 + 3)% 3]} alt={headings[slide]}/>
+                <img key={pictures[(slide - 2 + 3)% 3]} className={styles.slideImage} src={pictures[(slide - 2 + 3)% 3]} alt={headings[slide]}/>
             </div>
             <div className={`
                 ${styles.slide} 
@@ -74,7 +74,7 @@ const Slider = () => {
                 ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
                 ${isSlidingIn && direction === 'left' && styles.slideInLeft}
                 `}>
-                <img key={pictures[slide]} loading="lazy" className={styles.slideImage} src={pictures[slide]} alt={headings[slide]}/>
+                <img key={pictures[slide]} className={styles.slideImage} src={pictures[slide]} alt={headings[slide]}/>
             </div>
             <div className={`
                 ${styles.slide} 
@@ -83,7 +83,7 @@ const Slider = () => {
                 ${isSlidingOut && direction === 'right' && styles.slideOutRight} 
                 ${isSlidingIn && direction === 'right' && styles.slideInLeft}
                 `}>
-                <img key={pictures[(slide + 2) % 3]} loading="lazy" className={styles.slideImage} src={pictures[(slide + 2) % 3]} alt={headings[slide]}/>
+                <img key={pictures[(slide + 2) % 3]} className={styles.slideImage} src={pictures[(slide + 2) % 3]} alt={headings[slide]}/>
             </div>
         </div>
         }
