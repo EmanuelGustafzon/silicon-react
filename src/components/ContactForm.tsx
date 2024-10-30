@@ -13,7 +13,6 @@ interface IContact {
 }
 
 const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
-
     const { makeRequest, error, loading, response } = useSendData('contact');
     const [formData, setFormData] = useState<IContact>({ fullname: '', email: '', specialist: 'Neurology'});
     const [inputError, setInputError] = useState({ fullname: '', email: '' });
@@ -26,25 +25,18 @@ const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
         }
       ))
     }
+    
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
-      const fullname = formData.fullname;
-      const email = formData.email;
+      const {fullname, email} = formData
       const fullnameIsValid = formValidator.checkFullname(fullname);
       const emailIsValid = formValidator.checkEmail(email);
-      if(!fullnameIsValid) {
-        setInputError(prev => ({...prev, fullname: 'Provide your first and last name'}))
-        return
-      } else {
-        setInputError(prev => ({...prev, fullname: ''}))
-      }
-      if(!emailIsValid) {
-        setInputError(prev => ({...prev, email: 'provide a valid email'}))
-        return
-      } else {
-        setInputError(prev => ({...prev, email: ''}))
-      }
-
+      setInputError({
+        fullname: fullnameIsValid ? '' : 'Provide your first and last name',
+        email: emailIsValid ? '' : 'provide a valid email'
+      })
+      if(!fullnameIsValid || !emailIsValid) return
+      
       makeRequest(formData)
       setFormData(prev => ({...prev, fullname: '', email: ''}))
     }
