@@ -8,7 +8,7 @@ import formValidator from '../services/formValidator';
 const Subscribe = () => {
     const [ data, setData ] = useState({email: ''});
     const {makeRequest, response, error, loading} = useSendData('subscribe');
-    const [inputError, setInputError] = useState({email: false})
+    const [inputError, setInputError] = useState({email: ''})
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
@@ -19,20 +19,19 @@ const Subscribe = () => {
            } 
         ))
     }
-
     const subscribeAction = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const isValidEmail = formValidator.checkEmail(data.email);
         if(!isValidEmail) {
             setInputError(prev => ({
                     ...prev,
-                    email: true
+                    email: 'Please, enter a valid email.'
                 }))
             return
         }
         setInputError(prev => ({
             ...prev,
-            email: false
+            email: ''
         }))
         await makeRequest(data)
     }
@@ -48,7 +47,7 @@ const Subscribe = () => {
                     </div>
                 </div>
                 <div>
-                    <form onSubmit={subscribeAction}>   
+                    <form noValidate onSubmit={subscribeAction}>   
                         <input onChange={handleChange} name='email' type='email' required placeholder="&#xf003;  Your Email" style={{fontFamily: 'Manrope, Helvetica, sans-serif, FontAwesome'}}/>
                         <button disabled={loading} type='submit' className={`${btnStyles.brand} ${styles.subscribeBtn}`}>Subscribe</button>
                     </form>
@@ -60,7 +59,7 @@ const Subscribe = () => {
                             `}>
                         {error && <p>Sorry we are having some problems, please try again.</p>}
                         {(response && response.status === 200) && <p>Thank you for subscribing!</p>}
-                        {(inputError.email === true) && <p>Please, enter a valid email.</p>}
+                        {(inputError.email !== '') && <p> {inputError.email} </p>}
                     </div>
                 </div>
             </div>

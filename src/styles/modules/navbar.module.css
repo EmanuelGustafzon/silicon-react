@@ -1,5 +1,6 @@
 .navWrapper {
     height: 80px;
+    position: sticky;
     display: grid;
     margin: auto auto;
     padding-top: 20px;
@@ -27,7 +28,6 @@
 }
 @media (min-width: 720px) {
     .navWrapper {
-        position: relative;
         max-width: 720px;
         gap: 76px;
     }

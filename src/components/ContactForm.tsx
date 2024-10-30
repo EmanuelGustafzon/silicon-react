@@ -26,7 +26,6 @@ const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
         }
       ))
     }
-
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
       const fullname = formData.fullname;
