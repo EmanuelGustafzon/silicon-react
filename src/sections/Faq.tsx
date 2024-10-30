@@ -7,12 +7,7 @@ import useFetch from '../hooks/useFetch';
 import { IAccordion } from '../types/IAccordion';
 
 const Faq = () => {
-    const {data , loading, error} = useFetch<IAccordion[] | null>('faq')
-
-    if(error) {
-        console.log(error)
-        return
-    }
+    const {data , loading, error} = useFetch<IAccordion[] | null>('faq');
 
   return (
     <section className={styles.faq}>
@@ -39,16 +34,18 @@ const Faq = () => {
                 Contact Us Now
             </LinkButton>
         </div>
-        <div className={styles.accordions}>
+        {!error && 
+            <div className={styles.accordions}>
             { loading && <p>loading questions and answers...</p>}
             { data && data.map((accordion: IAccordion) => (
-                    <Accordion 
-                        key={accordion.id}
-                        title={accordion.title}
-                        content={accordion.content} id={''}/>
-                    ))
+                <Accordion 
+                    key={accordion.id}
+                    title={accordion.title}
+                    content={accordion.content} id={''}/>
+                ))
             }
-        </div>
+            </div>
+        } 
     </section>
 
   )

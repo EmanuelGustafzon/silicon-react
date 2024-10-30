@@ -6,10 +6,8 @@ import Testimonial from '../components/Testimonial'
 const Testimonials = () => {
     const {data , loading, error} = useFetch<ITestimonial[] | null>('testimonials') 
 
-    if(error) {
-        console.log(error)
-        return
-    }
+    if(error) return
+    
     return (
         <section className={styles.testamonials}>
             <div className={styles.testamonialsWrapper}>
