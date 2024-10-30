@@ -17,7 +17,7 @@ const ContactSection = () => {
                     <p>Please feel free to drop us a line. We will respond as soon as possible.</p>
                   </div>
                   <div>
-                    <a href='emaito:fake@fake.com '>
+                    <a href='mailto:fake@fake.com '>
                       {`leave us a message ->`}
                     </a>
                   </div>
@@ -31,7 +31,7 @@ const ContactSection = () => {
                     <p>Please free to reach out to us if you are looking for a new job opportunnity.</p>
                   </div>
                   <div>
-                    <a href='emaito:carrers@fake.com '>
+                    <a href='mailto:carrers@fake.com '>
                       {`leave us a message ->`}
                     </a>
                   </div>

@@ -18,11 +18,11 @@ const FindUs = () => {
                 <div className={styles.addressCard}>
                     <h2>Medical Center 1</h2>
                     <div>
-                        <span><FontAwesomeIcon icon={faMapMarker} color="#6366F1"/> </span>
+                        <span><FontAwesomeIcon icon={faMapMarker} color="#6366F1"/></span>
                         4517 Washington Ave. Manchester, Kentucky 39495
                     </div>
                     <div>
-                        <span><FontAwesomeIcon icon={faPhone} color="#6366F1"/> </span>
+                        <span><FontAwesomeIcon icon={faPhone} color="#6366F1"/></span>
                         (406) 555-0120
                     </div>
                     <div className={styles.openHour}>

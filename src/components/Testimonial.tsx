@@ -1,4 +1,4 @@
-import styles from '../styles/modules/testimonialsSection.module.css'
+import styles from '../styles/modules/testamonialCard.module.css'
 import { ITestimonial } from '../types/ITestimonial';
 
 const Testimonial: React.FC<ITestimonial> = ({ author, jobRole, starRating, avatarUrl, comment }) => {

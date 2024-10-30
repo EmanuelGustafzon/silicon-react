@@ -62,7 +62,7 @@
 .subscribeText1 {
     font: var(--heading-4);
 }
-#subscribe-text-2 {
+.subscribeText2  {
     font: var(--heading-4);
     display: none;
 }
@@ -86,9 +86,6 @@
         }
     }
     .subscribeText2 {
-        body.dark-theme & {
-            color: var(--white);
-        }
         display: inline-block;
     }
 }

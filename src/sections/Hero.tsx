@@ -42,8 +42,8 @@ const Hero = () => {
                 </div>
             </div>
             <div className={styles.phoneImgWrapper}>
-                <img id={styles.phoneBottom} className={styles.bannerPhoneImage} src="/phone-bottom.svg" alt="Picture of phone with the sillicon app"/> 
-                <img id={styles.phoneTop} className={styles.bannerPhoneImage} src="/phone-top.svg" alt="Picture of phone with the sillicon app"/> 
+                <img className={`${styles.bannerPhoneImage} ${styles.phoneBottom}`} src="/phone-bottom.svg" alt="Picture of phone with the sillicon app"/> 
+                <img className={`${styles.bannerPhoneImage} ${styles.phoneTop}`}  src="/phone-top.svg" alt="Picture of phone with the sillicon app"/> 
             </div>
         </div>
     </div>

@@ -98,7 +98,7 @@
         position: relative;
         grid-area: img;
     }
-    #phoneBottom {
+    .phoneBottom {
        display: grid;
        position: absolute;
        z-index: -1;
@@ -107,7 +107,7 @@
        bottom: 0;
        right: 30%;
     }
-    #phoneTop {
+    .phoneTop {
         display: grid;
         position: absolute;
         width: 65%;

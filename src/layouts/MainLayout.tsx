@@ -13,6 +13,7 @@ interface MainLayoutProps {
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const { theme } = useTheme()
   const device = useCurrentDevice()
+  
   return (
     <div className={`main-layout ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`} >
       <Navbar/> 
