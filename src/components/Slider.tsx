@@ -21,7 +21,6 @@ const Slider = () => {
         await new Promise((resolve) => setTimeout(resolve, 200));
         setIsSlidingOut(false)
         setSlide((prevSlide) => slide == 0 ? prevSlide = 2 : prevSlide - 1)
-        await new Promise((resolve) => setTimeout(resolve, 10));
         setIsSlidingIn(true)
         await new Promise((resolve) => setTimeout(resolve, 200));
         setIsSlidingIn(false) 
@@ -32,7 +31,6 @@ const Slider = () => {
         await new Promise((resolve) => setTimeout(resolve, 200));
         setIsSlidingOut(false)
         setSlide((prevSlide) => slide == 2 ? prevSlide = 0 : prevSlide + 1)
-        await new Promise((resolve) => setTimeout(resolve, 10))
         setIsSlidingIn(true)
         await new Promise((resolve) => setTimeout(resolve, 200));
         setIsSlidingIn(false)            
