@@ -13,16 +13,10 @@ interface IContact {
 }
 
 const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
+
     const { makeRequest, error, loading, response } = useSendData('contact');
-
-    const [formData, setFormData] = useState<IContact>({
-        fullname: '',
-        email: '',
-        specialist: 'Neurology'});
-
-    const [inputError, setInputError] = useState({
-      fullname: true,
-      email: true });
+    const [formData, setFormData] = useState<IContact>({ fullname: '', email: '', specialist: 'Neurology'});
+    const [inputError, setInputError] = useState({ fullname: '', email: '' });
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       setFormData(prevData => (
@@ -40,16 +34,16 @@ const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
       const fullnameIsValid = formValidator.checkFullname(fullname);
       const emailIsValid = formValidator.checkEmail(email);
       if(!fullnameIsValid) {
-        setInputError(prev => ({...prev, fullname: false}))
+        setInputError(prev => ({...prev, fullname: 'Provide your first and last name'}))
         return
       } else {
-        setInputError(prev => ({...prev, fullname: true}))
+        setInputError(prev => ({...prev, fullname: ''}))
       }
       if(!emailIsValid) {
-        setInputError(prev => ({...prev, email: false}))
+        setInputError(prev => ({...prev, email: 'provide a valid email'}))
         return
       } else {
-        setInputError(prev => ({...prev, email: true}))
+        setInputError(prev => ({...prev, email: ''}))
       }
 
       makeRequest(formData)
@@ -62,13 +56,13 @@ const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
         <label> Full name
           <div>
             <input type="text" name="fullname" onChange={handleChange}/>
-            { !inputError.fullname &&  <p className={styles.error}>Provide your first and last name</p>}
+            { inputError.fullname !== '' &&  <p className={styles.error}>{inputError.fullname}</p>}
           </div>
         </label>
         <label> Email address
           <div>
             <input type="email" name="email" onChange={handleChange}/>
-            { !inputError.email && <p className={styles.error}>provide a valid email</p> }
+            { inputError.email !== '' && <p className={styles.error}>{inputError.email}</p> }
           </div>
         </label>
         <label> Specialist

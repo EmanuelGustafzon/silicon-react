@@ -7,7 +7,7 @@ const ContactSection = () => {
     <section className={styles.section}>
       <div className={styles.wrapper}>
           <div>
-            <h1>Contact Us</h1>
+            <h1 className={styles.heading}>Contact Us</h1>
             <div className={styles.contactCardWrapper}>
               <div className={styles.contactCard}>
                 <Icon iconSrc='/envelope-icon.svg' altText='envelop '/>
