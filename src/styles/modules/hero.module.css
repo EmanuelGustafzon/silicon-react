@@ -98,10 +98,13 @@
         position: relative;
         grid-area: img;
     }
+    .bannerPhoneImage {
+        display: block;
+     }
     .phoneBottom {
        display: grid;
        position: absolute;
-       z-index: -1;
+       z-index: 1;
        height: 80%;
        width: 60%;
        bottom: 0;
@@ -109,6 +112,7 @@
     }
     .phoneTop {
         display: grid;
+        z-index: 2;
         position: absolute;
         width: 65%;
         height: 100%;
