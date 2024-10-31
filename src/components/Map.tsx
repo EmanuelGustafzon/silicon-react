@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import useTheme from "../hooks/useTheme";
 
 const Map = ({ width, height }: {width: string, height: string} ) => {
-  const { theme } = useTheme()
+    const { theme } = useTheme()
     const mapRef = useRef<mapboxgl.Map | null>(null)
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -29,10 +29,10 @@ const Map = ({ width, height }: {width: string, height: string} ) => {
         }
       }, [theme])
 
-  return (
-    <>
+    return (
+      <>
         <div ref={mapContainerRef} id="map" style={{ width: width, height: height }}></div>
-    </>
+      </>
   )
 }
 
