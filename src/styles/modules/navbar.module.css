@@ -17,6 +17,9 @@
     align-items: center;
     column-gap: 12px;
 }
+:global(a.active) {
+    color: var(--brand-primary);
+} 
 .logoName {
     font: var(--xl-text);
 }
@@ -57,11 +60,9 @@
         border-radius: 0;
         background-color: transparent;
         display: block;
-        a {
-            color: var(--color);
-        }
-        animation: none;   
+        animation: none; 
     }
+    
     .navLink {
         margin-right: 1em;
     }

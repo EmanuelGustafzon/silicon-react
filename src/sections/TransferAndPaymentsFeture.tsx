@@ -3,8 +3,8 @@ import LinkButton from '../components/LinkButton';
 import styles from '../styles/modules/tranferAndPaymentsFeature.module.css';
 
 const TransferAndPaymentsFeture = () => {
-  return (
-    <section className={styles.featureTranfersAndPayments}>
+    return (
+        <section className={styles.featureTranfersAndPayments}>
             <div className={styles.transfers}>
                 <div className={styles.transfersInformation}>
                     <h2>Make your money transfer simple and clear</h2>

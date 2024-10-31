@@ -41,26 +41,26 @@ const LinkButton: React.FC<LinkButtonProps> = ({ children, color, justStyles = f
 
   return (
     <>
-    { link &&
-        <a href={link} target='_blank' className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
-            { children }
-        </a> 
-    }
-    { clickEvent &&
-        <button disabled={disable} onClick={clickEvent} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
-            { children }
-        </button>
-    }
-    { internalLink &&
-        <Link to={internalLink} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
-            { children }
-        </Link> 
-    }
-    { justStyles &&
-        <div className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
-            { children }
-        </div> 
-    }
+        { link &&
+            <a href={link} target='_blank' className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+                { children }
+            </a> 
+        }
+        { clickEvent &&
+            <button disabled={disable} onClick={clickEvent} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+                { children }
+            </button>
+        }
+        { internalLink &&
+            <Link to={internalLink} className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+                { children }
+            </Link> 
+        }
+        { justStyles &&
+            <div className={`${styles.btn} ${choosedColor} ${choosedForm} ${choosedSize} ${className && className}`}>
+                { children }
+            </div> 
+        }
     </>
   )
 }

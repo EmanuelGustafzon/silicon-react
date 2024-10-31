@@ -1,5 +1,6 @@
 import Feature from '../components/Feature'
 import styles from '../styles/modules/features.module.css'
+
 const Features = () => {
   return (
     <section id='features' className={styles.features}>

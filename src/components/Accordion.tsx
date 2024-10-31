@@ -10,21 +10,21 @@ const Accordion: React.FC<IAccordion> = ({ title, content }) => {
 
     const openAccordion = () => setOpen((prevState) => ! prevState);
 
-  return (
-    <div className={styles.accordion}>
-        <div className={styles.questionWrapper}>
-        <h3 className={styles.question}>{title}</h3>
-            <LinkButton form='round' color={open ? 'brand' : 'secondary'} clickEvent={openAccordion} className={styles.accordionBtn}>
-                <FontAwesomeIcon icon={open ? faChevronUp : faChevronDown} className={`${styles.arrow} ${styles.arrowTransition}`}/>
-            </LinkButton>
-        </div>
-        {open && 
-            <div className={styles.answer}>
-                <p>{content}</p>
+    return (
+        <div className={styles.accordion}>
+            <div className={styles.questionWrapper}>
+            <h3 className={styles.question}>{title}</h3>
+                <LinkButton form='round' color={open ? 'brand' : 'secondary'} clickEvent={openAccordion} className={styles.accordionBtn}>
+                    <FontAwesomeIcon icon={open ? faChevronUp : faChevronDown} className={`${styles.arrow} ${styles.arrowTransition}`}/>
+                </LinkButton>
             </div>
-        }
-    </div>
-  )
+            {open && 
+                <div className={styles.answer}>
+                    <p>{content}</p>
+                </div>
+            }
+        </div>
+    )
 }
 
 export default Accordion

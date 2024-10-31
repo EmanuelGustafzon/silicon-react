@@ -38,8 +38,8 @@ const Subscribe = () => {
         setFormData(prev => ({...prev, email: ''}))
     }
 
-  return (
-    <section className={styles.subscribe}>
+    return (
+        <section className={styles.subscribe}>
             <div className={styles.subscribeWrapper}>
                 <div className={styles.bellTextWrapper}>
                     <img loading="lazy" className={styles.bellImg} src="/notification.svg" alt="notification icon / bell"/>
@@ -66,7 +66,7 @@ const Subscribe = () => {
                 </div>
             </div>
         </section>
-  )
+    )
 }
 
 export default Subscribe

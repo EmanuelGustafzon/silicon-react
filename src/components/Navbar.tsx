@@ -6,6 +6,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import LinkButton from './LinkButton';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -18,7 +19,7 @@ const Navbar = () => {
                 </Link>      
                 <nav className={styles.links}>
                     <HashLink to="/#features" className={styles.navLink}>Features</HashLink>
-                    <Link to="/contact" className={styles.navLink}>Contact</Link>
+                    <NavLink to="/contact" className={styles.navLink}>Contact</NavLink>
                 </nav>     
                 <ThemeSwitch/>
                 <LinkButton internalLink='/' color='brand' size='medium' className={styles.signin}>
