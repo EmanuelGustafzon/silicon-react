@@ -33,7 +33,7 @@ const Map = ({ width, height }: {width: string, height: string} ) => {
       <>
         <div ref={mapContainerRef} id="map" style={{ width: width, height: height }}></div>
       </>
-  )
+    )
 }
 
 export default Map
