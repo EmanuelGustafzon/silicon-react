@@ -7,7 +7,7 @@ import { HashLink } from 'react-router-hash-link';
 
 const Hero = () => {
   return (
-    <div className={styles.banner}>
+    <section className={styles.banner}>
         <div className={styles.bannerWrapper}>
             <h1 className={styles.bannerHeading}>Manage All Your Money in One App</h1>
             <div className={styles.bannerContent}>
@@ -46,7 +46,7 @@ const Hero = () => {
                 <img className={`${styles.bannerPhoneImage} ${styles.phoneTop}`}  src="/phone-top.svg" alt="Picture of phone with the sillicon app"/> 
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 
