@@ -7,6 +7,7 @@ const Testimonials = () => {
     const {data , loading, error} = useFetch<ITestimonial[] | null>('testimonials') 
 
     if(error) return
+    if(data && data.length === 0) return
     
     return (
         <section className={styles.testamonials}>
@@ -15,7 +16,7 @@ const Testimonials = () => {
                     Clients are Loving Our App
                 </h2>
                 { loading && <p>loading testimonials...</p>}
-                { data && data.map((testamonial: ITestimonial) => (
+                { (data && data.length !== 0) && data.map((testamonial: ITestimonial) => (
                     <Testimonial 
                         key={testamonial.id} 
                         author={testamonial.author} 
