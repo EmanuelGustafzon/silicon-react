@@ -11,7 +11,7 @@ Skills I devloped during this project.
 * CSS Moduls 
 * React 
 * React hooks and custom hooks
-* working with API:s
+* Working with API:s
 * Regex
 
 
