@@ -16,7 +16,7 @@ const BurgerMenu = () => {
             </button>
             <div>
             {open && 
-                <nav onClick={() => setOpen((open) => open = !open)} id="main-menu" className={styles.links}>
+                <nav onClick={() => setOpen((open) => open = !open)} className={styles.links}>
                     <HashLink smooth to="/#features">Features</HashLink>
                     <Link to="/contact">Contact</Link>
                     <Link to="/"  id="login-mobile">Sign in / up</Link>

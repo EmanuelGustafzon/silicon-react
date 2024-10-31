@@ -47,7 +47,9 @@ const Slider = () => {
                 ${isSlidingOut && direction === 'left' && styles.slideOutRight} 
                 ${isSlidingIn && direction === 'left' && styles.slideInLeft}
                 `}>
-                <img src={pictures[slide]} className={styles.slideImage} alt={headings[slide]}/>
+                {slide === 0 && <img src={pictures[0]} className={styles.slideImage} alt={headings[slide]}/>}
+                {slide === 1 && <img src={pictures[1]} className={styles.slideImage} alt={headings[slide]}/>}
+                {slide === 2 && <img src={pictures[2]} className={styles.slideImage} alt={headings[slide]}/>} 
             </div>
         </div>
         }

@@ -48,7 +48,7 @@ const TransferAndPaymentsFeture = () => {
                 </div>
             </div>
         </section>
-  )
+    )
 }
 
 export default TransferAndPaymentsFeture

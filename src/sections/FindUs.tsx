@@ -6,6 +6,7 @@ import useCurrentDevice from '../hooks/useCurrentDevice';
 
 const FindUs = () => {
     const device = useCurrentDevice()
+
     return (
         <section className={styles.section}>
             <div className={styles.wrapper}>
@@ -13,7 +14,6 @@ const FindUs = () => {
                     {device === 'mobile' && <Map width='100%' height='30em'/>}
                     {device === 'tablet' && <Map width='720px' height='30em'/>}
                     {device === 'desktop' && <Map width='45em' height='40em'/>}
-                    
                 </div>
                 <div className={styles.addressCardsWrapper}>
                     <div className={styles.addressCard}>

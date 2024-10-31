@@ -21,7 +21,8 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     );
   };
 
-  export { ThemeContext, ThemeProvider }; 
+export { ThemeContext, ThemeProvider }; 
+
 
 // init the theme based on localstorage or else user preferences
 const initTheme = (): ITheme => {
