@@ -12,7 +12,7 @@ const Map = ({ width, height }: {width: string, height: string} ) => {
         mapboxgl.accessToken = 'pk.eyJ1IjoiZW1hbnVlbGd1c3RhZnpvbiIsImEiOiJja294YndvNm8wZXBmMnBtcGFkZ3I5N3V6In0.t_4FKgw6kJSPGD4LleGWqQ'
         mapRef.current = new mapboxgl.Map({
           container: mapContainerRef.current as HTMLElement,
-          style: `${theme === 'light' ? "mapbox://styles/mapbox/streets-v11" : "mapbox://styles/mapbox/navigation-night-v1"}`,
+          style: "mapbox://styles/mapbox/streets-v11",
           center: [-76.9902, 38.8341],
           zoom: 12.12
         });
@@ -27,7 +27,14 @@ const Map = ({ width, height }: {width: string, height: string} ) => {
         return () => {
           if (mapRef.current) mapRef.current.remove()
         }
-      }, [theme])
+      }, [])
+
+      // this extra useEffect optimize the code to only update the styles of the map and not re render the hole map
+      useEffect(() => {
+        if (!mapRef.current) return;
+        const newStyle = theme === 'light' ? 'mapbox://styles/mapbox/streets-v11': 'mapbox://styles/mapbox/navigation-night-v1';
+        mapRef.current.setStyle(newStyle);
+      }, [theme]); 
 
     return (
       <>
