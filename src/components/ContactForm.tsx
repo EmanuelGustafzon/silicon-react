@@ -28,12 +28,12 @@ const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
     
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
-      const {fullname, email} = formData
+      const {fullname, email} = formData;
       const fullnameIsValid = formValidator.checkFullname(fullname);
       const emailIsValid = formValidator.checkEmail(email);
       setInputError({
-        fullname: fullnameIsValid ? '' : 'Provide your first and last name',
-        email: emailIsValid ? '' : 'provide a valid email'
+        fullname: fullnameIsValid ? '' : 'Please provide your first and last name',
+        email: emailIsValid ? '' : 'Please provide a valid email'
       })
       if(!fullnameIsValid || !emailIsValid) return
       
@@ -47,13 +47,13 @@ const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
       <form noValidate className={styles.form} onSubmit={handleSubmit}>
         <label> Full name
           <div>
-            <input type="text" name="fullname" value={formData.fullname} onChange={handleChange}/>
+            <input type="text" name="fullname" value={formData.fullname} onChange={handleChange} placeholder=" Firstname Lastname"/>
             { inputError.fullname !== '' &&  <p className={styles.error}>{inputError.fullname}</p>}
           </div>
         </label>
         <label> Email address
           <div>
-            <input type="email" name="email" value={formData.email} onChange={handleChange}/>
+            <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder=" example@domain.com"/>
             { inputError.email !== '' && <p className={styles.error}>{inputError.email}</p> }
           </div>
         </label>
