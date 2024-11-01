@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import ViewWidthContext from '../contexts/viewWidthContext';
 import { IViewWidthContextType } from '../types/IviewWidthContext';
 
@@ -12,12 +12,15 @@ const useCurrentDevice = () => {
 
     const { viewWidth } = viewWidthContext;
 
-    let currentDevice: deviceType = 'mobile';
-    if (viewWidth >= 1340) {
-        currentDevice = 'desktop';
-    } else if (viewWidth >= 720 && viewWidth < 1340) {
-        currentDevice = 'tablet';
-    }
+    const currentDevice = useMemo((): deviceType => {
+        if (viewWidth >= 1340) {
+            return 'desktop';
+        } else if (viewWidth >= 720 && viewWidth < 1340) {
+            return 'tablet';
+        } else {
+            return 'mobile';
+        }
+    }, [viewWidth])
 
     return currentDevice
 }
