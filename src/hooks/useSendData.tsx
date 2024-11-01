@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 function useSendData(endpoint: string, url?: string) {
     const baseUrl = 'https://win24-assignment.azurewebsites.net/api/forms';
@@ -8,7 +8,7 @@ function useSendData(endpoint: string, url?: string) {
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<Error | null>(null);
 
-    const makeRequest = async (data: unknown) => {
+    const makeRequest = useCallback(async (data: unknown) => {
         setLoading(true)
         try {
             const res = await fetch(`${url}/${endpoint}`, { 
@@ -29,7 +29,7 @@ function useSendData(endpoint: string, url?: string) {
         } finally {
             setLoading(false)
         }
-    };
+    }, [endpoint, url])
     
     return {
         makeRequest,
