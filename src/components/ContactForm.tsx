@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from "react"
 import useSendData from "../hooks/useSendData";
 import btnStyles from '../styles/modules/button.module.css'
 import styles from '../styles/modules/contactForm.module.css'
-import formValidator from "../services/formValidator";
+import formValidatorService from "../services/formValidatorService";
 
 type SpecialistType = 'Neurology' | 'Ophthalmic Surgery' | 'Pathology' | 'Hospital Medicine';
 
@@ -29,8 +29,8 @@ const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
       const {fullname, email} = formData;
-      const fullnameIsValid = formValidator.checkFullname(fullname);
-      const emailIsValid = formValidator.checkEmail(email);
+      const fullnameIsValid = formValidatorService.checkFullname(fullname);
+      const emailIsValid = formValidatorService.checkEmail(email);
       setInputError({
         fullname: fullnameIsValid ? '' : 'Please provide your first and last name',
         email: emailIsValid ? '' : 'Please provide a valid email'

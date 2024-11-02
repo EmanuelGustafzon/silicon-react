@@ -1,4 +1,4 @@
-class formValidator {
+class formValidatorService {
 
     static checkEmail(email: string): boolean {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -13,4 +13,4 @@ class formValidator {
     }
 }
 
-export default formValidator
+export default formValidatorService

@@ -3,7 +3,7 @@ import btnStyles from '../styles/modules/button.module.css';
 import 'font-awesome/css/font-awesome.min.css';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import useSendData from '../hooks/useSendData';
-import formValidator from '../services/formValidator';
+import formValidatorService from '../services/formValidatorService';
 
 const Subscribe = () => {
     const [ formData, setFormData ] = useState({email: ''});
@@ -21,7 +21,7 @@ const Subscribe = () => {
     }
     const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        const isValidEmail = formValidator.checkEmail(formData.email);
+        const isValidEmail = formValidatorService.checkEmail(formData.email);
         if(!isValidEmail) {
             setInputError(prev => ({
                     ...prev,
