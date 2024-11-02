@@ -1,7 +1,7 @@
-export type ITheme = 'light' | 'dark';
+export type ThemeType = 'light' | 'dark';
 
 export interface IThemeContextType {
-    theme: ITheme;
-    setTheme: (theme: ITheme) => void;
+    theme: ThemeType;
+    setTheme: (theme: ThemeType) => void;
   }
   

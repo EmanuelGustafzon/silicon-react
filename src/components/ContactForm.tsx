@@ -4,12 +4,12 @@ import btnStyles from '../styles/modules/button.module.css'
 import styles from '../styles/modules/contactForm.module.css'
 import formValidator from "../services/formValidator";
 
-type ISpecialist = 'Neurology' | 'Ophthalmic Surgery' | 'Pathology' | 'Hospital Medicine';
+type SpecialistType = 'Neurology' | 'Ophthalmic Surgery' | 'Pathology' | 'Hospital Medicine';
 
 interface IContact {
     fullname: string;
     email: string;
-    specialist: ISpecialist
+    specialist: SpecialistType
 }
 
 const ContactForm = ({ parentClassName }: { parentClassName?: string }) => {

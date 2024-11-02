@@ -1,14 +1,14 @@
 import styles from '../styles/modules/feature.module.css';
 import Icon from './Icon';
 
-interface featureProps {
+interface IFeatureProps {
   iconSrc: string;
   iconAltText: string;
   heading: string;
   content: string;
 }
 
-const Feature: React.FC<featureProps> = ({iconSrc, iconAltText, heading, content}) => {
+const Feature: React.FC<IFeatureProps> = ({iconSrc, iconAltText, heading, content}) => {
   return (
     <div className={styles.featuresCard}>
       <Icon iconSrc={iconSrc} altText={iconAltText}/>

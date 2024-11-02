@@ -3,7 +3,7 @@ import useTheme from '../hooks/useTheme';
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
-interface LinkButtonProps {
+interface ILinkButtonProps {
     children: ReactNode;
     color: 'white' | 'brand' | 'primary' | 'secondary';
     justStyles?: boolean,
@@ -16,7 +16,7 @@ interface LinkButtonProps {
     disable?: boolean;
 }
 
-const LinkButton: React.FC<LinkButtonProps> = ({ children, color, justStyles = false, link, internalLink, clickEvent, size, form, className, disable}) => {
+const LinkButton: React.FC<ILinkButtonProps> = ({ children, color, justStyles = false, link, internalLink, clickEvent, size, form, className, disable}) => {
     const { theme } = useTheme();
 
     if(link && clickEvent) {

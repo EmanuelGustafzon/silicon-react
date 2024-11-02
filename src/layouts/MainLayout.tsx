@@ -6,11 +6,11 @@ import useTheme from "../hooks/useTheme";
 import CurrentPath from "../components/CurrentPath";
 import useCurrentDevice from "../hooks/useCurrentDevice";
 
-interface MainLayoutProps {
+interface IMainLayoutProps {
     children: ReactNode;
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+const MainLayout: React.FC<IMainLayoutProps> = ({ children }) => {
   const { theme } = useTheme()
   const device = useCurrentDevice()
   
