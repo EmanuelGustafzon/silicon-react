@@ -16,23 +16,23 @@ const Slider = () => {
     const [direction, setDirection] = useState<'left' | 'right'>('right')
 
     const slideLeft = async () => {
+        setSlide((prevSlide) => slide == 0 ? prevSlide = 2 : prevSlide - 1)
         setDirection('left')
         setIsSlidingOut(true)
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 230));
         setIsSlidingOut(false)
-        setSlide((prevSlide) => slide == 0 ? prevSlide = 2 : prevSlide - 1)
         setIsSlidingIn(true)
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 230));
         setIsSlidingIn(false) 
     }
     const slideright = async () => {
+        setSlide((prevSlide) => slide == 2 ? prevSlide = 0 : prevSlide + 1)
         setDirection('right')
         setIsSlidingOut(true)
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 230));
         setIsSlidingOut(false)
-        setSlide((prevSlide) => slide == 2 ? prevSlide = 0 : prevSlide + 1)
         setIsSlidingIn(true)
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 230));
         setIsSlidingIn(false)            
     }
   return (
