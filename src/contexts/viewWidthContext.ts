@@ -1,6 +1,6 @@
 import { createContext } from 'react';
-import { IViewWidthContextType } from '../types/IviewWidthContext';
+import { IViewWidthContext } from '../types/IviewWidthContext';
 
-const ViewWidthContext = createContext<IViewWidthContextType | undefined>(undefined);
+const ViewWidthContext = createContext<IViewWidthContext | undefined>(undefined);
 
 export default ViewWidthContext

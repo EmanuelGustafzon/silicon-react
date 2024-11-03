@@ -1,10 +1,10 @@
 import {useContext } from 'react'
 import { ThemeContext } from '../contexts/themeProvider'
-import { IThemeContextType } from '../types/IthemeContext'
+import { IThemeContext } from '../types/IthemeContext'
 
 const useTheme = () => {
 
-    const themeContext = useContext<IThemeContextType | undefined>(ThemeContext)
+    const themeContext = useContext<IThemeContext | undefined>(ThemeContext)
 
     if (themeContext === undefined) throw new Error('useTheme must be used within a ThemeProvider');
 

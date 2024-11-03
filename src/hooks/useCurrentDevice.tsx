@@ -1,12 +1,12 @@
 import { useContext, useMemo } from 'react';
 import ViewWidthContext from '../contexts/viewWidthContext';
-import { IViewWidthContextType } from '../types/IviewWidthContext';
+import { IViewWidthContext } from '../types/IviewWidthContext';
 
 type deviceType = 'mobile' | 'tablet' | 'desktop';
 
 const useCurrentDevice = () => {
 
-    const viewWidthContext= useContext<IViewWidthContextType | undefined>(ViewWidthContext)
+    const viewWidthContext= useContext<IViewWidthContext | undefined>(ViewWidthContext)
     
     if (viewWidthContext === undefined) throw new Error('useTheme must be used within a ThemeProvider');
 
