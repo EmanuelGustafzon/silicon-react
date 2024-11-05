@@ -7,7 +7,7 @@ class formValidatorService {
     }
 
     static checkFullname(fullname: string) {
-        const fullNamePattern = /^[a-zA-Z]+ [a-zA-Z]+$/
+        const fullNamePattern = /^[a-öA-Ö]+ [a-öA-Ö]+$/
         const isValid = fullNamePattern.test(fullname);
         return isValid;
     }
